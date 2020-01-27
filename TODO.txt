@@ -1,0 +1,6 @@
+cube 3d gestion des maps errors
+
+premieres lignes et dernieres lignes verifier qu'il n'y ai que des 1 ou espaces
+sur ligne suivantes (apres la verif de la premiere ligne):	-si en dessous du dernier carractere de la ligne precedente, 1
+															-si le caractere suivant de la ligne sup existe et est un espace, 1
+															-si derniere ligne, comme pour la premiere tout en respectant les deux test précédents
