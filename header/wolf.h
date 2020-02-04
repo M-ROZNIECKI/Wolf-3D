@@ -5,36 +5,33 @@
 
 typedef struct		s_wolf
 {
-	t_map			**map;
-	t_sprite		*sprite;
+	t_map			map;
+	t_sprite		sprite;
 	char 			*file;
 	char 			*line;
 	int				fd;
-	char 			ret;
-	char 			ok;
+	char			ret;
+	unsigned char	ok;
 	short			error;
 }					t_wolf;
 
 typedef struct		s_sprite
 {
-	char 			*no;
-	char 			*so;
-	char 			*we;
-	char 			*ea;
-	char 			*s;
-	char 			*f;
-	char 			*c;
+	void 			*no;
+	void 			*so;
+	void 			*we;
+	void 			*ea;
+	void 			*s;
+	void 			*f;
+	void 			*c;
 }					t_sprite;
 
-typedef struct	s_map_init
+typedef struct		s_map
 {
-	char			*content;
-	struct s_list	*next;
-}				t_map_init;
-
-typedef struct	s_map
-{
-	char 		**map;
-}				t_map;
+	t_list			ch_map;
+	char 			**map;
+	unsigned int	map_y;
+	unsigned int	map_x;
+}					t_map;
 
 #endif
