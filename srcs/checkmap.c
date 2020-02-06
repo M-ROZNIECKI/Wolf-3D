@@ -21,10 +21,12 @@
 */
 
 /*
-**	todo:: remove whitespaces before filling the **map
+**	todo:: check valid map :: find starting pos and go up until finding '1' and after that check
+** 	if it's all around starting pos if not continue to go up until finding another '1'conform until the first line
+** 	of the map, if starting pos not surrounded, error not
 */
 
-static void	ft_check_map(t_map *map)
+static void	ft_del_space(t_map *map)
 {
 	t_list	*temp;
 	int i[4];
@@ -41,13 +43,14 @@ static void	ft_check_map(t_map *map)
 			while ((temp->content[i[0] + i[3]] >= 9 && temp->content[i[0] + i[3]] >= 13) || temp->content[i[0] + i[3]] == 32)
 				i[3]++;
 			if (n > 0)
-				ft_strlcpy(&temp->content[i[0]], &temp->content[i[0] + n], map->map_x);
+				ft_strlcpy(&temp->content[i[0]], &temp->content[i[0] + i[3]], map->map_x);
 			i[0]++;
 		}
 		if (i[0] > i[2])
 			i[2] = i[0];
 		i[1]++;
 	}
+	map->map_x = i[2];
 }
 
 static void	ft_fill_tab(t_map *map)
@@ -67,6 +70,7 @@ static void	ft_fill_tab(t_map *map)
 		temp = temp->next;
 		if (map->map[i][0])
 	}
+	ft_valid_map();
 }
 
 static void	ft_fill_map(t_wolf *wolf)
@@ -77,9 +81,9 @@ static void	ft_fill_map(t_wolf *wolf)
 	wolf->map.ch_map.content = ft_lstnew(wolf->line);
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
-	while (wolf->line[0] != '1' || (wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
+	while (wolf->line[0] > '1' || wolf->line[0] < '0' || (wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
-		if (wolf->line[0] == '1')
+		if (wolf->line[0] == '1' || wolf->line == '0')
 		{
 			new = ft_lstnew(wolf->line);
 			ft_lstadd_back(wolf->map.ch_map.content, new)
@@ -92,7 +96,7 @@ static void	ft_fill_map(t_wolf *wolf)
 		else
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	}
-	ft_check_map(&wolf->map);
+	ft_del_space(&wolf->map);
 	ft_fill_tab(&wolf->map);
 }
 
@@ -100,7 +104,7 @@ short	ft_init_map(t_wolf *wolf)
 {
 	while ((wolf->ret = getnextline(wolf->fd, &wolf->line)) == 1)
 	{
-		if (wolf->line[0] == '1' && wolf->ok == 0xFF)
+		if ((wolf->line[0] == '1' || wolf->line[0] == '0') && wolf->ok == 0xFF)
 			ft_fillmap(wolf);
 		else if (wolf->line[0] == 'N' || wolf->line[0] == 'S' || wolf->line[0] == 'F' || wolf->line[0] == 'W' || wolf->line[0] == 'E' || wolf->line[0] == 'C')
 			ft_fillsprite();
