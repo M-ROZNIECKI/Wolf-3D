@@ -20,37 +20,158 @@
 ** 1	: bad format
 */
 
-/*
-**	todo:: check valid map :: find starting pos and go up until finding '1' and after that check
-** 	if it's all around starting pos if not continue to go up until finding another '1'conform until the first line
-** 	of the map, if starting pos not surrounded, error not
-*/
+static void	ft_check_u(t_map *map);
+static void	ft_check_d(t_map *map);
+static void	ft_check_l(t_map *map);
+static void	ft_check_r(t_map *map);
+extern void ft_error(char error, int line, char *file, const char function[11]);
+
+static void	ft_start_pos(t_map *map)
+{
+	map->temp_y = 0;
+	map->temp_x = 0;
+	while (map->map[map->temp_y] &&
+			map->map[map->temp_y][map->temp_x] != 'N' &&
+			map->map[map->temp_y][map->temp_x] != 'S' &&
+			map->map[map->temp_y][map->temp_x] != 'E' &&
+			map->map[map->temp_y][map->temp_x] != 'W')
+	{
+		map->temp_x = 0;
+		while (map->map[map->temp_y][map->temp_x] &&
+				map->map[map->temp_y][map->temp_x] != 'N' &&
+				map->map[map->temp_y][map->temp_x] != 'S' &&
+				map->map[map->temp_y][map->temp_x] != 'E' &&
+				map->map[map->temp_y][map->temp_x] != 'W')
+			map->temp_x++;
+		if (map->map[map->temp_y][map->temp_x] != 'N' &&
+			map->map[map->temp_y][map->temp_x] != 'S' &&
+			map->map[map->temp_y][map->temp_x] != 'E' &&
+			map->map[map->temp_y][map->temp_x] != 'W')
+			map->temp_y++;
+	}
+	map->start_x = map->temp_x;
+	map->start_y = map->temp_y;
+}
+
+static void	ft_check_u(t_map *map)
+{
+	while (map->map[map->temp_y - 1][map->temp_x] != '1')
+	{
+		map->temp_y--;
+		if ((map->check_x == map->temp_x) && (map->check_y == map->temp_y))
+			return;
+		if (map->temp_y == 0)
+			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		if (map->map[map->temp_y][map->temp_x - 1] != '1')
+		{
+			ft_check_l(map);
+			return;
+		}
+	}
+	ft_check_r(map);
+	return;
+}
+
+static void	ft_check_d(t_map *map)
+{
+	while (map->map[map->temp_y + 1][map->temp_x] != '1')
+	{
+		map->temp_y++;
+		if ((map->check_x == map->temp_x) && (map->check_y == map->temp_y))
+			return;
+		if (map->temp_y == map->map_y || map->map[map->temp_y][map->temp_x] == 0)
+			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		if (map->map[map->temp_y][map->temp_x + 1] != '1')
+		{
+			ft_check_r(map);
+			return;
+		}
+	}
+	ft_check_l(map);
+	return;
+}
+
+static void	ft_check_r(t_map *map)
+{
+	while (map->map[map->temp_y][map->temp_x + 1] != '1')
+	{
+		map->temp_x++;
+		if ((map->check_x == map->temp_x) && (map->check_y == map->temp_y))
+			return;
+		if (map->temp_x == map->map_x || map->map[map->temp_y][map->temp_x] == 0)
+			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		if (map->map[map->temp_y - 1][map->temp_x] != '1')
+		{
+			ft_check_u(map);
+			return;
+		}
+	}
+	ft_check_d(map);
+	return;
+}
+
+static void	ft_check_l(t_map *map)
+{
+	while (map->map[map->temp_y][map->temp_x - 1] != '1')
+	{
+		map->temp_x--;
+		if ((map->check_x == map->temp_x) && (map->check_y == map->temp_y))
+			return;
+		if (map->check_x > map->temp_x)
+		{
+			map->check_x = map->temp_x;
+			map->check_y = map->temp_y;
+		}
+		if (map->temp_x == map->map_x || map->map[map->temp_y][map->temp_x] == 0)
+			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		if (map->map[map->temp_y + 1][map->temp_x] != '1')
+		{
+			ft_check_d(map);
+			return;
+		}
+	}
+	ft_check_u(map);
+	return;
+}
+
+static void	ft_valid_map(t_map *map)
+{
+	ft_start_pos(map);
+	map->temp_x = map->start_x;
+	map->temp_y = map->start_y;
+	if (map->temp_x <= 0)
+		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+	while (map->map[map->temp_y][map->temp_x - 1] != '1')
+		map->temp_x--;
+	map->check_x = map->temp_x;
+	map->check_y = map->temp_y;
+	ft_check_u(map);
+}
 
 static void	ft_del_space(t_map *map)
 {
 	t_list	*temp;
-	int i[4];
+	int i[3];
 
-	temp = map->ch_map;
+	temp = &map->ch_map;
 	i[1] = 0;
-	i[2] = 0;
-	while (i[1] < map->map_y)
+	while (temp)
 	{
 		i[0] = 0;
 		while (temp->content[i[0]])
 		{
-			i[3] = 0;
-			while ((temp->content[i[0] + i[3]] >= 9 && temp->content[i[0] + i[3]] >= 13) || temp->content[i[0] + i[3]] == 32)
-				i[3]++;
+			i[2] = 0;
+			while ((temp->content[i[0] + i[2]] >= 9 && temp->content[i[0] + i[2]] >= 13) || temp->content[i[0] + i[2]] == 32)
+				i[2]++;
 			if (n > 0)
-				ft_strlcpy(&temp->content[i[0]], &temp->content[i[0] + i[3]], map->map_x);
+				ft_strlcpy(temp->content[i[0]], temp->content[i[0] + i[2]], map->map_x);
 			i[0]++;
 		}
-		if (i[0] > i[2])
-			i[2] = i[0];
-		i[1]++;
+		if (i[0] > i[1])
+			i[1] = i[0];
+		temp = temp->next;
 	}
-	map->map_x = i[2];
+	map->map_x = i[1];
 }
 
 static void	ft_fill_tab(t_map *map)
@@ -60,7 +181,7 @@ static void	ft_fill_tab(t_map *map)
 
 	i = 0;
 	temp = map->ch_map
-	if (!(map->map = malloc(sizeof(char *) * (map->map_y))))
+	if (!(map->map = ft_calloc(sizeof(char *), (map->map_y + 1))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	while (i < map->map_y)
 	{
@@ -86,7 +207,7 @@ static void	ft_fill_map(t_wolf *wolf)
 		if (wolf->line[0] == '1' || wolf->line == '0')
 		{
 			new = ft_lstnew(wolf->line);
-			ft_lstadd_back(wolf->map.ch_map.content, new)
+			ft_lstadd_back(wolf->map.ch_map.content, new);
 			wolf->map.map_y++;
 			if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
 				wolf->map.map_x = temp;
@@ -100,7 +221,7 @@ static void	ft_fill_map(t_wolf *wolf)
 	ft_fill_tab(&wolf->map);
 }
 
-short	ft_init_map(t_wolf *wolf)
+void	ft_init_map(t_wolf *wolf)
 {
 	while ((wolf->ret = getnextline(wolf->fd, &wolf->line)) == 1)
 	{
@@ -119,5 +240,4 @@ short	ft_init_map(t_wolf *wolf)
 	}
 	if (wolf->ret == -1)
 		ft_error(-1, __LINE__, __FILE__, __FUNCTION__);
-	return (wolf->error);
 }
