@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   wolf.h                                           .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/11 16:22:53 by mrozniec     #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/11 16:22:53 by mrozniec    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
+/* ************************************************************************** */
 
 #ifndef WOLF_H
 # define WOLF_H
@@ -5,20 +17,25 @@
 
 typedef struct		s_sprite
 {
-	void 			*no;
-	void 			*so;
-	void 			*we;
-	void 			*ea;
-	void 			*s;
-	void 			*f;
-	void 			*c;
+	void			*no;
+	void			*so;
+	void			*we;
+	void			*ea;
+	void			*s;
+	void			*f;
+	void			*c;
 }					t_sprite;
+
+typedef struct		s_lst_map
+{
+	char				*content;
+	struct s_lst_map	*next;
+}					t_lst_map;
 
 typedef struct		s_map
 {
-	t_list
-	ch_map;
-	char 			**map;
+	t_lst_map		*ch_map;
+	char			**map;
 	unsigned int	map_y;
 	unsigned int	map_x;
 	unsigned int	start_x;
@@ -33,8 +50,8 @@ typedef struct		s_wolf
 {
 	t_map			map;
 	t_sprite		sprite;
-	char 			*file;
-	char 			*line;
+	char			*file;
+	char			*line;
 	int				fd;
 	char			ret;
 	unsigned char	ok;
