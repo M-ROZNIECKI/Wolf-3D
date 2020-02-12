@@ -20,7 +20,7 @@ int main(void)
 	void *my_mlx;
 
 	my_mlx = mlx_init();
-	fistyland = mlx_new_window(my_mlx, 1600, 900, "Title");
+	fistyland = mlx_new_window(my_mlx, 1920, 1080, "Hello");
 	mlx_loop(my_mlx);
 	return (0);
 }
