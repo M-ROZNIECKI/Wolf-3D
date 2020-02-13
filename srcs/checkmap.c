@@ -20,12 +20,6 @@
 ** 1	: bad format
 */
 
-static void	ft_check_u(t_map *map);
-static void	ft_check_d(t_map *map);
-static void	ft_check_l(t_map *map);
-static void	ft_check_r(t_map *map);
-extern void ft_error(char error, int line, char *file, const char function[11]);
-
 void	ft_start_pos(t_map *map)
 {
 	map->temp_y = 0;

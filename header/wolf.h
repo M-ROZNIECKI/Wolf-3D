@@ -62,6 +62,6 @@ void	ft_check_u(t_map *map);
 void	ft_check_d(t_map *map);
 void	ft_check_l(t_map *map);
 void	ft_check_r(t_map *map);
-void	ft_error(char error, int line, const char *file, const char *function)
+void	ft_error(char error, int line, const char *file, const char *function);
 
 #endif

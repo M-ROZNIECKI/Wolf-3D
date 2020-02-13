@@ -49,11 +49,11 @@ static void	ft_del_space(t_map *map)
 			i[2] = 0;
 			while ((temp->content[i[0] + i[2]] >= 9 &&
 					temp->content[i[0] + i[2]] >= 13) ||
-				   temp->content[i[0] + i[2]] == 32)
+					temp->content[i[0] + i[2]] == 32)
 				i[2]++;
 			if (i[2] > 0)
 				ft_strlcpy(&temp->content[i[0]],
-						   &temp->content[i[0] + i[2]], map->map_x);
+						&temp->content[i[0] + i[2]], map->map_x);
 			i[0]++;
 		}
 		if (i[0] > i[1])
@@ -91,7 +91,7 @@ static void	ft_fill_map(t_wolf *wolf)
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
 	while (wolf->line[0] > '1' || wolf->line[0] < '0' ||
-		   (wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
+		(wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
 		if (wolf->line[0] == '1' || wolf->line[0] == '0')
 		{
@@ -117,8 +117,8 @@ void		ft_init_map(t_wolf *wolf)
 		if ((wolf->line[0] == '1' || wolf->line[0] == '0') && wolf->ok == 0xFF)
 			ft_fill_map(wolf);
 		else if (wolf->line[0] == 'N' || wolf->line[0] == 'S' ||
-				 wolf->line[0] == 'F' || wolf->line[0] == 'W' ||
-				 wolf->line[0] == 'E' || wolf->line[0] == 'C')
+				wolf->line[0] == 'F' || wolf->line[0] == 'W' ||
+				wolf->line[0] == 'E' || wolf->line[0] == 'C')
 			ft_fillsprite();
 		else if (wolf->line[0] == 'R')
 			ft_fillres();
