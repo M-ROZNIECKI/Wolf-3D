@@ -105,6 +105,7 @@ static void	ft_fill_map(t_wolf *wolf)
 			temp = 0;
 		else
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		free(wolf->line);
 	}
 	ft_del_space(&wolf->map);
 	ft_fill_tab(&wolf->map);
@@ -127,7 +128,8 @@ void		ft_init_map(t_wolf *wolf)
 			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 		}
-		free(wolf->line);
+		if (wolf->ok != 0xFF)
+			free(wolf->line);
 	}
 	if (wolf->ret == -1)
 		ft_error(-1, __LINE__, __FILE__, __FUNCTION__);
