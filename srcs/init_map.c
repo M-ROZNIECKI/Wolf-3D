@@ -84,7 +84,6 @@ static void	ft_fill_tab(t_map *map)
 
 static void	ft_fill_map(t_wolf *wolf)
 {
-	t_lst_map		*new;
 	unsigned int	temp;
 
 	wolf->map.ch_map = (t_lst_map *)ft_lstnew(wolf->line);
@@ -95,16 +94,16 @@ static void	ft_fill_map(t_wolf *wolf)
 	{
 		if (wolf->line[0] == '1' || wolf->line[0] == '0')
 		{
-			new = (t_lst_map *)ft_lstnew(wolf->line);
-			ft_lstadd_back((t_list **)&wolf->map.ch_map, (t_list *)new);
+			ft_lstadd_back((t_list **)&wolf->map.ch_map, ft_lstnew(wolf->line));
 			wolf->map.map_y++;
 			if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
 				wolf->map.map_x = temp;
 		}
-		else if (wolf->line[0] == '\0')
-			temp = 0;
-		else
+		else if (wolf->line[0] != '\0')
+		{
+			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		}
 		free(wolf->line);
 	}
 	ft_del_space(&wolf->map);
