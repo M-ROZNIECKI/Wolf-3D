@@ -91,9 +91,11 @@ static void	ft_fill_map(t_wolf *wolf)
 	while ((wolf->line[0] == '1' || wolf->line[0] == '0') &&
 		(wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
+		printf("%s\n", wolf->line);
 		if (wolf->line[0] == '1' || wolf->line[0] == '0')
 		{
 			ft_lstadd_back((t_list **)&wolf->map.ch_map, ft_lstnew(wolf->line));
+			printf("%s\n", wolf->map.ch_map->next->content);
 			wolf->map.map_y++;
 			if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
 				wolf->map.map_x = temp;
