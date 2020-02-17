@@ -17,13 +17,13 @@
 
 typedef struct		s_sprite
 {
-	void			*no;
-	void			*so;
-	void			*we;
-	void			*ea;
-	void			*s;
-	void			*f;
-	void			*c;
+	char			*no;
+	char			*so;
+	char			*we;
+	char			*ea;
+	char			*s;
+	unsigned char	f[3];
+	unsigned char	c[3];
 }					t_sprite;
 
 typedef struct		s_lst_map
@@ -46,8 +46,15 @@ typedef struct		s_map
 	unsigned int	temp_y;
 }					t_map;
 
+typedef struct		s_win
+{
+	int 			res_x;
+	int				res_y;
+}					t_win;
+
 typedef struct		s_wolf
 {
+	t_win			win;
 	t_map			map;
 	t_sprite		sprite;
 	char			*file;
