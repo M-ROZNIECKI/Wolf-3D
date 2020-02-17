@@ -75,7 +75,7 @@ static void	ft_fill_tab(t_map *map)
 	{
 		if (!(map->map[i] = ft_calloc(sizeof(char *), (map->map_x + 1))))
 			ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
-		ft_strlcpy(map->map[i], temp->content, map->map_x);
+		ft_strlcpy(map->map[i++], temp->content, map->map_x);
 		temp = temp->next;
 	}
 	ft_valid_map(map);
@@ -120,9 +120,10 @@ void		ft_init_map(t_wolf *wolf)
 				wolf->line[0] == 'E' || wolf->line[0] == 'C')
 			ft_texture(wolf);
 		else if (wolf->line[0] == 'R')
-			ft_fillres(wolf->win, &wolf->line[1]);
+			ft_fill_res(&wolf->win, &wolf->line[1], &wolf->ok);
 		else if (wolf->line[0] != '\0')
 		{
+			ft_printf("%hhu\n", wolf->ok);
 			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 		}
