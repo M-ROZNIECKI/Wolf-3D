@@ -35,22 +35,20 @@ static void	ft_one_valid_format(void)
 			"1 1 1 1 1 1 1 1\n");
 }
 
-static void	ft_error_duplic_elem(int line, const char *file, const char *func)
+static void	ft_error_duplic_elem(void)
 {
-	ft_printf("error at \nfile : %s\nfunction : %s\nline : %d\n"
-			, file, func, line);
 	ft_printf("you set an element multiple time in your .cub file%s",
-			"\n\npls make a valid .cub file");
+			"\n\npls make a valid .cub file\n");
 	ft_one_valid_format();
 }
 
 void		ft_error(char error, int line, const char *file, const char *func)
 {
+	ft_printf("error in\nfile : %s\nfunction : %s\nline : %d\n", file, func, line);
 	if (error == 0)
-		ft_error_duplic_elem(line, file, func);
+		ft_error_duplic_elem();
 	else if (error == -2)
-		ft_printf("malloc failled in \nfile : %s\nfunction : %s\nline : %d\n"
-		, file, func, line);
+		ft_printf("malloc failed");
 	else if (error == -1)
 		ft_printf("failure in processing .cub file, %s",
 		"check if you give us a valid file\n");

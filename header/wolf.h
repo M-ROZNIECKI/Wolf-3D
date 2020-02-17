@@ -71,5 +71,8 @@ void	ft_check_l(t_map *map);
 void	ft_check_r(t_map *map);
 void	ft_start_pos(t_map *map);
 void	ft_error(char error, int line, const char *file, const char *function);
+void	ft_init_map(t_wolf *wolf);
+void	ft_fill_res(t_win *win, char *entry, unsigned char *ok);
+void	ft_texture(t_wolf *wolf);
 
 #endif
