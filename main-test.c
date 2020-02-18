@@ -30,7 +30,9 @@ int main(int argc, char const *argv[])
 		wolf->fd = open(argv[1], O_RDONLY);
 		wolf->ok = 0;
 		ft_init_map(wolf);
-	}/*
+	}
+	printf("everything is ok");
+	/*
 	my_mlx = mlx_init();
 	fistyland = mlx_new_window(my_mlx, 1920, 1080, "Hello");
 	mlx_loop(my_mlx);*/

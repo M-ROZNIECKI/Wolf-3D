@@ -14,6 +14,7 @@
 #ifndef WOLF_H
 # define WOLF_H
 # include "libftprintf.h"
+# include <stdio.h>
 
 typedef struct		s_sprite
 {
@@ -25,12 +26,12 @@ typedef struct		s_sprite
 	unsigned char	f[3];
 	unsigned char	c[3];
 }					t_sprite;
-
+/*
 typedef struct		s_lst_map
 {
 	char				*content;
 	struct s_lst_map	*next;
-}					t_lst_map;
+}					t_lst_map;*/
 
 typedef struct		s_map
 {
@@ -44,6 +45,7 @@ typedef struct		s_map
 	unsigned int	check_y;
 	unsigned int	temp_x;
 	unsigned int	temp_y;
+	unsigned int	pass;
 }					t_map;
 
 typedef struct		s_win
@@ -60,8 +62,8 @@ typedef struct		s_wolf
 	char			*file;
 	char			*line;
 	int				fd;
-	char			ret;
-	unsigned char	ok;
+	int				ret;
+	unsigned short	ok;
 	short			error;
 }					t_wolf;
 
@@ -72,7 +74,7 @@ void	ft_check_r(t_map *map);
 void	ft_start_pos(t_map *map);
 void	ft_error(char error, int line, const char *file, const char *function);
 void	ft_init_map(t_wolf *wolf);
-void	ft_fill_res(t_win *win, char *entry, unsigned char *ok);
+void	ft_fill_res(t_win *win, char *entry, unsigned short *ok);
 void	ft_texture(t_wolf *wolf);
 
 #endif

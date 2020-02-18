@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_printf/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf/mac/libftprintf.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_back_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstnew_bonus.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstnew_bonus.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-test.c" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.cub" beforeDir="false" afterPath="$PROJECT_DIR$/map.cub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/checkmap.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/checkmap.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_texture.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_texture.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/init_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/init_map.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="CompDBLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Wolf-3D" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="Wolf-3D" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1581978475370" />
+        <entry key="$PROJECT_DIR$/compile_commands.json" value="3503542027" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Xx8adj2hAGyFFiVu1wiVjaCsQU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/a.out" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Make" type="CLionExternalRunConfiguration" factoryName="Application" PROGRAM_PARAMS="map.cub" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Wolf-3D" TARGET_NAME="make" CONFIG_NAME="make" RUN_PATH="$PROJECT_DIR$/a.out">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="" />
+      <created>1581976449503</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581976449503</updated>
+      <workItem from="1581976453008" duration="301000" />
+      <workItem from="1581976766225" duration="17360000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="667" y="276" width="642" height="553" key="#Unnamed" timestamp="1581977624097">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="667" y="276" width="642" height="553" key="#Unnamed/67.27.1853.1053@67.27.1853.1053" timestamp="1581977624097" />
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581978205650">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581978205650" />
+    <state x="705" y="357" width="566" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581977957346">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="705" y="357" width="566" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1581977957346" />
+    <state x="771" y="260" width="424" height="584" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1581977582383">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="771" y="260" width="424" height="584" key="#com.intellij.ide.macro.MacrosDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581977582382" />
+    <state x="733" y="383" width="510" height="337" key="#com.intellij.tools.ToolEditorDialog" timestamp="1581977583526">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="733" y="383" width="510" height="337" key="#com.intellij.tools.ToolEditorDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581977583526" />
+    <state x="622" y="329" width="741" height="669" key="EditFileWatcherDialog" timestamp="1581977867236">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="622" y="329" width="741" height="669" key="EditFileWatcherDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581977867236" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581978205190">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1581978205190" />
+    <state width="1807" height="344" key="GridCell.Tab.0.bottom" timestamp="1582037007909">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007909" />
+    <state width="1807" height="344" key="GridCell.Tab.0.center" timestamp="1582037007908">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007908" />
+    <state width="1807" height="344" key="GridCell.Tab.0.left" timestamp="1582037007907">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007907" />
+    <state width="1807" height="344" key="GridCell.Tab.0.right" timestamp="1582037007908">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007908" />
+    <state width="1807" height="344" key="GridCell.Tab.1.bottom" timestamp="1582037007676">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007676" />
+    <state width="1807" height="344" key="GridCell.Tab.1.center" timestamp="1582037007675">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007675" />
+    <state width="1807" height="344" key="GridCell.Tab.1.left" timestamp="1582037007675">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007675" />
+    <state width="1807" height="344" key="GridCell.Tab.1.right" timestamp="1582037007676">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582037007676" />
+    <state x="482" y="187" key="SettingsEditor" timestamp="1581977869049">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1581977869049" />
+    <state x="874" y="290" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1581977584696">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="874" y="290" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/67.27.1853.1053@67.27.1853.1053" timestamp="1581977584696" />
+    <state x="528" y="291" width="920" height="522" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1581978338265">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="528" y="291" width="920" height="522" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/67.27.1853.1053@67.27.1853.1053" timestamp="1581978338265" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main-test.c</url>
+          <line>33</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/ft_texture.c</url>
+          <line>76</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
