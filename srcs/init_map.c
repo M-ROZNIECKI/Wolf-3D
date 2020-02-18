@@ -25,13 +25,20 @@ static void	ft_valid_map(t_map *map)
 	map->temp_x = map->start_x;
 	map->temp_y = map->start_y;
 	map->pass = 0;
-	if (map->temp_x <= 0 || map->temp_y <= 0 || map->temp_x >= map->map_x || map->temp_y >= map->map_y)
+	if (map->temp_x <= 0 || map->temp_y <= 0 || map->temp_x >= map->map_x ||
+	map->temp_y >= map->map_y)
 		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
-	while (map->map[map->temp_y][map->temp_x - 1] != '1')
-		map->temp_x--;
-	map->check_x = map->temp_x;
-	map->check_y = map->temp_y;
-	ft_check_u(map);
+	if (map->temp_x == 1 || map->temp_y == 1 || map->temp_x == (map->map_x - 2)
+	|| map->temp_x == (map->map_x - 2))
+		ft_select_dir(map);
+	else
+	{
+		while (map->map[map->temp_y][map->temp_x - 1] != '1')
+			map->temp_x--;
+		map->check_x = map->temp_x;
+		map->check_y = map->temp_y;
+		ft_check_u(map);
+	}
 }
 
 static void	ft_del_space(t_map *map)

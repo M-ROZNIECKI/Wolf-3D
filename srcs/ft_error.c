@@ -44,7 +44,8 @@ static void	ft_error_duplic_elem(void)
 
 void		ft_error(char error, int line, const char *file, const char *func)
 {
-	ft_printf("error in\nfile : %s\nfunction : %s\nline : %d\n", file, func, line);
+	ft_printf("error in\nfile : %s\nfunction : %s\nline : %d\n",
+			file, func, line);
 	if (error == 0)
 		ft_error_duplic_elem();
 	else if (error == -2)

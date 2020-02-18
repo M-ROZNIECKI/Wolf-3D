@@ -26,12 +26,6 @@ typedef struct		s_sprite
 	unsigned char	f[3];
 	unsigned char	c[3];
 }					t_sprite;
-/*
-typedef struct		s_lst_map
-{
-	char				*content;
-	struct s_lst_map	*next;
-}					t_lst_map;*/
 
 typedef struct		s_map
 {
@@ -76,5 +70,6 @@ void	ft_error(char error, int line, const char *file, const char *function);
 void	ft_init_map(t_wolf *wolf);
 void	ft_fill_res(t_win *win, char *entry, unsigned short *ok);
 void	ft_texture(t_wolf *wolf);
+void	ft_select_dir(t_map *map);
 
 #endif
