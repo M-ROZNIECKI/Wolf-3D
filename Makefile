@@ -22,6 +22,7 @@ SRC =	srcs/checkmap.c\
 		srcs/ft_error.c\
 		srcs/ft_texture.c\
 		srcs/init_map.c\
+		srcs/ft_check_map_utils.c\
 		libft/ft_atoi.c\
         libft/ft_atof.c\
         libft/ft_bzero.c\
@@ -94,9 +95,9 @@ $(NAME): $(OBJ) $(HEADER)
 .PHONY: clean fclean re all
 
 clean:
-	@/bin/rm -rf $(OBJ) temp_file
+	@/bin/rm $(OBJ)
 
 fclean: clean
-	@/bin/rm -rf $(NAME) __.SYMDEF\ SORTED
+	@/bin/rm -rf $(NAME)
 
 re: fclean all

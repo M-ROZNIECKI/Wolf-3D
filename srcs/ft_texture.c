@@ -103,7 +103,6 @@ void		ft_fill_res(t_win *win, char *entry, unsigned short *ok)
 	int i;
 
 	i = 0;
-
 	*ok += 0x080;
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
