@@ -13,9 +13,9 @@
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_lst_map **alst, t_lst_map *new)
 {
-	t_list	*last;
+	t_lst_map	*last;
 
 	if (new && *alst)
 	{

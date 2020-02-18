@@ -24,7 +24,8 @@ static void	ft_valid_map(t_map *map)
 	ft_start_pos(map);
 	map->temp_x = map->start_x;
 	map->temp_y = map->start_y;
-	if (map->temp_x <= 0)
+	map->pass = 0;
+	if (map->temp_x <= 0 || map->temp_y <= 0 || map->temp_x >= map->map_x || map->temp_y >= map->map_y)
 		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	while (map->map[map->temp_y][map->temp_x - 1] != '1')
 		map->temp_x--;
@@ -71,12 +72,13 @@ static void	ft_fill_tab(t_map *map)
 	temp = map->ch_map;
 	if (!(map->map = ft_calloc(sizeof(char *), (map->map_y + 1))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
-	while (i < map->map_y)
+	while (temp)
 	{
-		if (!(map->map[i] = ft_calloc(sizeof(char *), (map->map_x + 1))))
+		if (!(map->map[i] = ft_calloc(sizeof(char), (map->map_x + 1))))
 			ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
-		ft_strlcpy(map->map[i++], temp->content, map->map_x);
+		ft_strlcpy(map->map[i], temp->content, (ft_strlen(temp->content) + 1));
 		temp = temp->next;
+		i++;
 	}
 	ft_valid_map(map);
 }
@@ -85,17 +87,15 @@ static void	ft_fill_map(t_wolf *wolf)
 {
 	unsigned int	temp;
 
-	wolf->map.ch_map = (t_lst_map *)ft_lstnew(wolf->line);
+	temp = 0;
+	wolf->map.ch_map = ft_lstnew(ft_strdup(wolf->line));
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
-	while ((wolf->line[0] == '1' || wolf->line[0] == '0') &&
-		(wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
+	while ((get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
-		printf("%s\n", wolf->line);
 		if (wolf->line[0] == '1' || wolf->line[0] == '0')
 		{
-			ft_lstadd_back((t_list **)&wolf->map.ch_map, ft_lstnew(wolf->line));
-			printf("%s\n", wolf->map.ch_map->next->content);
+			ft_lstadd_back(&wolf->map.ch_map, ft_lstnew(ft_strdup(wolf->line)));
 			wolf->map.map_y++;
 			if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
 				wolf->map.map_x = temp;
@@ -104,6 +104,13 @@ static void	ft_fill_map(t_wolf *wolf)
 		{
 			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		}
+		else
+		{
+			free(wolf->line);
+			ft_del_space(&wolf->map);
+			ft_fill_tab(&wolf->map);
+			return;
 		}
 		free(wolf->line);
 	}
@@ -125,7 +132,6 @@ void		ft_init_map(t_wolf *wolf)
 			ft_fill_res(&wolf->win, &wolf->line[1], &wolf->ok);
 		else if (wolf->line[0] != '\0')
 		{
-			ft_printf("%hhu\n", wolf->ok);
 			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 		}
