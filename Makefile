@@ -18,11 +18,9 @@ else
 TARGET = ft_printf/mac/libftprintf.a
 endif
 
-SRC =	srcs/checkmap.c\
-		srcs/ft_error.c\
+SRC =	srcs/ft_error.c\
 		srcs/ft_texture.c\
 		srcs/init_map.c\
-		srcs/ft_check_map_utils.c\
 		libft/ft_atoi.c\
         libft/ft_atof.c\
         libft/ft_bzero.c\

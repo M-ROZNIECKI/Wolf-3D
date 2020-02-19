@@ -33,8 +33,6 @@ typedef struct		s_map
 	char			**map;
 	unsigned int	map_y;
 	unsigned int	map_x;
-	unsigned int	start_x;
-	unsigned int	start_y;
 	unsigned int	check_x;
 	unsigned int	check_y;
 	unsigned int	temp_x;
@@ -53,23 +51,15 @@ typedef struct		s_wolf
 	t_win			win;
 	t_map			map;
 	t_sprite		sprite;
-	char			*file;
 	char			*line;
 	int				fd;
 	int				ret;
 	unsigned short	ok;
-	short			error;
 }					t_wolf;
 
-void	ft_check_u(t_map *map);
-void	ft_check_d(t_map *map);
-void	ft_check_l(t_map *map);
-void	ft_check_r(t_map *map);
-void	ft_start_pos(t_map *map);
 void	ft_error(char error, int line, const char *file, const char *function);
 void	ft_init_map(t_wolf *wolf);
 void	ft_fill_res(t_win *win, char *entry, unsigned short *ok);
 void	ft_texture(t_wolf *wolf);
-void	ft_select_dir(t_map *map);
 
 #endif
