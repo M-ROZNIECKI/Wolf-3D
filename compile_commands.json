@@ -810,5 +810,19 @@
    "-g"
   ],
   "file": "libft/get_next_line.c"
+ },
+ {
+  "directory": "/mnt/fenros/42_project/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_check_map_utils.o",
+   "-c",
+   "srcs/ft_check_map_utils.c",
+   "-Wall",
+   "-Wextra",
+   "-g"
+  ],
+  "file": "srcs/ft_check_map_utils.c"
  }
 ]
