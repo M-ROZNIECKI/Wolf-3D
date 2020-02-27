@@ -53,17 +53,17 @@ static void	ft_fill_color(unsigned char color[3], char *entry)
 
 static void	ft_texture2(t_wolf *wolf)
 {
-	if (wolf->line[0] == 'E' && (wolf->ok & 0x010) == 0)
+	if (wolf->line[0] == 'E' && (wolf->ok & (unsigned)0x010) == 0)
 	{
 		ft_copy_path(&wolf->sprite.ea, &wolf->line[2]);
 		wolf->ok += 0x010;
 	}
-	else if (wolf->line[0] == 'F' && (wolf->ok & 0x020) == 0)
+	else if (wolf->line[0] == 'F' && (wolf->ok & (unsigned)0x020) == 0)
 	{
 		ft_fill_color(wolf->sprite.f, &wolf->line[1]);
 		wolf->ok += 0x020;
 	}
-	else if (wolf->line[0] == 'C' && (wolf->ok & 0x040) == 0)
+	else if (wolf->line[0] == 'C' && (wolf->ok & (unsigned)0x040) == 0)
 	{
 		ft_fill_color(wolf->sprite.c, &wolf->line[1]);
 		wolf->ok += 0x040;
@@ -74,22 +74,22 @@ static void	ft_texture2(t_wolf *wolf)
 
 void		ft_texture(t_wolf *wolf)
 {
-	if (wolf->line[0] == 'S' && wolf->line[1] == 'O' && (wolf->ok & 0x01) == 0)
+	if (wolf->line[0] == 'S' && wolf->line[1] == 'O' && (wolf->ok & (unsigned)0x01) == 0)
 	{
 		ft_copy_path(&wolf->sprite.so, &wolf->line[2]);
 		wolf->ok += 0x01;
 	}
-	else if (wolf->line[0] == 'S' && (wolf->ok & 0x02) == 0)
+	else if (wolf->line[0] == 'S' && (wolf->ok & (unsigned)0x02) == 0)
 	{
 		ft_copy_path(&wolf->sprite.s, &wolf->line[1]);
 		wolf->ok += 0x02;
 	}
-	else if (wolf->line[0] == 'N' && (wolf->ok & 0x04) == 0)
+	else if (wolf->line[0] == 'N' && (wolf->ok & (unsigned)0x04) == 0)
 	{
 		ft_copy_path(&wolf->sprite.no, &wolf->line[2]);
 		wolf->ok += 0x04;
 	}
-	else if (wolf->line[0] == 'W' && (wolf->ok & 0x08) == 0)
+	else if (wolf->line[0] == 'W' && (wolf->ok & (unsigned)0x08) == 0)
 	{
 		ft_copy_path(&wolf->sprite.we, &wolf->line[2]);
 		wolf->ok += 0x08;
@@ -107,7 +107,11 @@ void		ft_fill_res(t_win *win, char *entry, unsigned short *ok)
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
 	win->res_x = ft_atoi(&entry[i]);
+	if (win->res_x > RES_X_MAX)
+		win->res_x = RES_X_MAX;
 	while (((entry[i] >= 13 && entry[i] != 32) || entry[i] <= 9) && entry[i])
 		i++;
 	win->res_y = ft_atoi(&entry[i]);
+	if (win->res_y > RES_Y_MAX)
+		win->res_y = RES_Y_MAX;
 }

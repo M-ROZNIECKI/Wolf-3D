@@ -97,7 +97,6 @@ static void	ft_fill_map(t_wolf *wolf)
 {
 	unsigned int	temp;
 
-	temp = 0;
 	wolf->map.ch_map = ft_lstnew(ft_strdup(wolf->line));
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
@@ -124,6 +123,7 @@ static void	ft_fill_map(t_wolf *wolf)
 		}
 		free(wolf->line);
 	}
+	wolf->ok += 0x0100;
 	ft_del_space(&wolf->map);
 	ft_fill_tab(&wolf->map);
 }
@@ -132,13 +132,13 @@ void		ft_init_map(t_wolf *wolf)
 {
 	while ((wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
-		if ((wolf->line[0] == '1' || wolf->line[0] == '0') && wolf->ok == 0xFF)
+		if ((wolf->line[0] == '1' || wolf->line[0] == '0') && wolf->ok == 0x0FF)
 			ft_fill_map(wolf);
-		else if (wolf->line[0] == 'N' || wolf->line[0] == 'S' ||
+		else if ((wolf->line[0] == 'N' || wolf->line[0] == 'S' ||
 				wolf->line[0] == 'F' || wolf->line[0] == 'W' ||
-				wolf->line[0] == 'E' || wolf->line[0] == 'C')
+				wolf->line[0] == 'E' || wolf->line[0] == 'C') && wolf->ok < 0x0FF)
 			ft_texture(wolf);
-		else if (wolf->line[0] == 'R')
+		else if (wolf->line[0] == 'R' && wolf->ok < 0x0FF && (wolf->ok & (unsigned)0x080) == 0)
 			ft_fill_res(&wolf->win, &wolf->line[1], &wolf->ok);
 		else if (wolf->line[0] != '\0')
 		{
