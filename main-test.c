@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:00 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 17:45:00 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/02/27 18:59:45 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ int main(int argc, char const *argv[])
 		ft_init_map(wolf);
 	}
 	printf("everything is ok");
-	/*
-	my_mlx = mlx_init();
-	fistyland = mlx_new_window(my_mlx, 1920, 1080, "Hello");
+/*	my_mlx = mlx_init();
+	fistyland = mlx_new_window(my_mlx, wolf->win.res_x, wolf->win.res_y, "hello");
 	mlx_loop(my_mlx);*/
 	return (0);
 }

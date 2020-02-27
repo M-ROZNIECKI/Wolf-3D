@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:39:57 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 17:39:57 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/02/27 17:44:28 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,10 @@ static void	ft_fill_tab(t_map *map)
 		i++;
 	}
 	ft_valid_map(map);
+	ft_start_pos(map);
+	if (map->start_x == map->map_x || map->start_y == map->map_y)
+		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+
 }
 
 static void	ft_fill_map(t_wolf *wolf)
