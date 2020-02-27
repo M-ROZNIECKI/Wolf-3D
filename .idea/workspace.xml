@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ft_texture.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_texture.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/init_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/init_map.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
