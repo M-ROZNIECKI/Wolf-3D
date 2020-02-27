@@ -6,7 +6,7 @@
 #   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2020/02/27 17:45:12 by mrozniec          #+#    #+#             #
-#   Updated: 2020/02/27 17:45:12 by mrozniec         ###   ########lyon.fr   #
+#   Updated: 2020/02/27 18:56:17 by mrozniec         ###   ########lyon.fr   #
 #                                                                            #
 # ************************************************************************** #
 
@@ -21,6 +21,7 @@ endif
 SRC =	srcs/ft_error.c\
 		srcs/ft_texture.c\
 		srcs/init_map.c\
+		srcs/ft_utils_map.c\
 		libft/ft_atoi.c\
         libft/ft_atof.c\
         libft/ft_bzero.c\
@@ -80,7 +81,7 @@ HEADER =	header/$(wildcard *.h)
 
 OBJ =	$(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -g
+FLAGS = -Wall -Wextra -I minilibx -L minilibx -lmlx
 
 all: $(NAME)
 
