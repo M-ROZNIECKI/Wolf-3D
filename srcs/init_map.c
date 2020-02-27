@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.f>       +#+  +:+       +#+        */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 10:27:21 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/17 10:27:27 by mrozniec         ###   ########lyon.fr   */
+/*   Created: 2020/02/27 17:39:57 by mrozniec          #+#    #+#             */
+/*   Updated: 2020/02/27 17:39:57 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
