@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main-test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.f>       +#+  +:+       +#+        */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:56:21 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/17 13:56:28 by mrozniec         ###   ########lyon.fr   */
+/*   Created: 2020/02/27 17:45:00 by mrozniec          #+#    #+#             */
+/*   Updated: 2020/02/27 17:45:00 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minilibx/mlx.h"
 #include "header/wolf.h"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_texture.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.f>       +#+  +:+       +#+        */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:01:30 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/17 14:01:35 by mrozniec         ###   ########lyon.fr   */
+/*   Created: 2020/02/27 17:35:21 by mrozniec          #+#    #+#             */
+/*   Updated: 2020/02/27 17:35:21 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

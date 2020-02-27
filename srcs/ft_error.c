@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.f>       +#+  +:+       +#+        */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 10:27:44 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/17 10:53:54 by mrozniec         ###   ########lyon.fr   */
+/*   Created: 2020/02/27 17:44:34 by mrozniec          #+#    #+#             */
+/*   Updated: 2020/02/27 17:44:34 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../header/wolf.h"
 
