@@ -16,6 +16,9 @@
 # include "libftprintf.h"
 # include <stdio.h>
 
+# define RES_X_MAX 5120
+# define RES_Y_MAX 2880
+
 typedef struct		s_sprite
 {
 	char			*no;
