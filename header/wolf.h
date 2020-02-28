@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:47 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 18:50:16 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/02/27 19:37:15 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <mlx.h>
 
-# define RES_X_MAX 5120
-# define RES_Y_MAX 2880
+# define RES_X_MAX 2560
+# define RES_Y_MAX 1440
 
 typedef struct		s_sprite
 {
