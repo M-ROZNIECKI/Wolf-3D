@@ -6,7 +6,7 @@
 /*   By: fenrir <fenrir@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:39:21 by fenrir            #+#    #+#             */
-/*   Updated: 2020/02/28 14:39:21 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 13:07:50 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lst_clear(t_lst_map **lst, void (*del)(void*))
 {
-    t_lst_map	*elem;
+	t_lst_map	*elem;
 
 	while (*lst && del)
 	{

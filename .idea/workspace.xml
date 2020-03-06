@@ -10,68 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_printf/linux/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf/linux/libftprintf.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/libft.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header/libftprintf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/libftprintf.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_atof.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_atoi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_bzero.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_calloc.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_hhitoa_base.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_hitoa_base.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_isalnum.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_isalpha.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_isascii.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_isdigit.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_isprint.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_itoa.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_itoa_base.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_litoa_base.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_llitoa.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_llitoa_base.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_front_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstclear_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstdelone_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstiter_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstlast_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstmap_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstnew_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstsize_bonus.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_memccpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_memchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_memcmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_memcpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_memmove.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_memset.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_putchar_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_putendl_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_putnbr_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_putstr_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_split.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strdup.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strjoin.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strjoinmod.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strjoinmodnbits.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strlcat.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strlcpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strlen.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strmapi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strncmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strnstr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strrchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_strtrim.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_substr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_tolower.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_toupper.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/get_next_line.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-test.c" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ft_lst.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_lst.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/init_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/init_map.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +52,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1583488290256" />
-        <entry key="$PROJECT_DIR$/compile_commands.json" value="2511071888" />
+        <entry key="$PROJECT_DIR$" value="1583502514963" />
+        <entry key="$PROJECT_DIR$/compile_commands.json" value="4241426310" />
       </map>
     </option>
     <option name="projectSyncType">
@@ -171,6 +119,7 @@
       <workItem from="1582897054785" duration="61000" />
       <workItem from="1582897139893" duration="953000" />
       <workItem from="1583489264564" duration="3022000" />
+      <workItem from="1583497009921" duration="3784000" />
     </task>
     <servers />
   </component>
