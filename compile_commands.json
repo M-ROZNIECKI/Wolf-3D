@@ -9,23 +9,13 @@
    "main-test.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "main-test.c"
- },
- {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
-  "arguments": [
-   "cc",
-   "-o",
-   "srcs/checkmap.o",
-   "-c",
-   "srcs/checkmap.c",
-   "-Wall",
-   "-Wextra",
-   "-g"
-  ],
-  "file": "srcs/checkmap.c"
  },
  {
   "directory": "/mnt/fenros/42_project/Wolf-3D",
@@ -37,7 +27,11 @@
    "srcs/ft_error.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "srcs/ft_error.c"
  },
@@ -51,7 +45,11 @@
    "srcs/ft_texture.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "srcs/ft_texture.c"
  },
@@ -65,7 +63,11 @@
    "srcs/init_map.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "srcs/init_map.c"
  },
@@ -79,7 +81,11 @@
    "libft/ft_atoi.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_atoi.c"
  },
@@ -93,7 +99,11 @@
    "libft/ft_atof.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_atof.c"
  },
@@ -107,7 +117,11 @@
    "libft/ft_bzero.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_bzero.c"
  },
@@ -121,7 +135,11 @@
    "libft/ft_calloc.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_calloc.c"
  },
@@ -135,7 +153,11 @@
    "libft/ft_isalnum.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_isalnum.c"
  },
@@ -149,7 +171,11 @@
    "libft/ft_isalpha.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_isalpha.c"
  },
@@ -163,7 +189,11 @@
    "libft/ft_isascii.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_isascii.c"
  },
@@ -177,7 +207,11 @@
    "libft/ft_isdigit.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_isdigit.c"
  },
@@ -191,7 +225,11 @@
    "libft/ft_isprint.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_isprint.c"
  },
@@ -205,7 +243,11 @@
    "libft/ft_itoa.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_itoa.c"
  },
@@ -219,7 +261,11 @@
    "libft/ft_llitoa.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_llitoa.c"
  },
@@ -233,7 +279,11 @@
    "libft/ft_itoa_base.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_itoa_base.c"
  },
@@ -247,7 +297,11 @@
    "libft/ft_hitoa_base.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_hitoa_base.c"
  },
@@ -261,7 +315,11 @@
    "libft/ft_hhitoa_base.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_hhitoa_base.c"
  },
@@ -275,7 +333,11 @@
    "libft/ft_litoa_base.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_litoa_base.c"
  },
@@ -289,7 +351,11 @@
    "libft/ft_llitoa_base.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_llitoa_base.c"
  },
@@ -303,7 +369,11 @@
    "libft/ft_memccpy.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_memccpy.c"
  },
@@ -317,7 +387,11 @@
    "libft/ft_memchr.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_memchr.c"
  },
@@ -331,7 +405,11 @@
    "libft/ft_memcmp.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_memcmp.c"
  },
@@ -345,7 +423,11 @@
    "libft/ft_memcpy.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_memcpy.c"
  },
@@ -359,7 +441,11 @@
    "libft/ft_memmove.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_memmove.c"
  },
@@ -373,7 +459,11 @@
    "libft/ft_memset.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_memset.c"
  },
@@ -387,7 +477,11 @@
    "libft/ft_putchar_fd.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_putchar_fd.c"
  },
@@ -401,7 +495,11 @@
    "libft/ft_putendl_fd.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_putendl_fd.c"
  },
@@ -415,7 +513,11 @@
    "libft/ft_putnbr_fd.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_putnbr_fd.c"
  },
@@ -429,7 +531,11 @@
    "libft/ft_putstr_fd.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_putstr_fd.c"
  },
@@ -443,7 +549,11 @@
    "libft/ft_split.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_split.c"
  },
@@ -457,7 +567,11 @@
    "libft/ft_strchr.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strchr.c"
  },
@@ -471,7 +585,11 @@
    "libft/ft_strdup.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strdup.c"
  },
@@ -485,7 +603,11 @@
    "libft/ft_strjoin.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strjoin.c"
  },
@@ -499,7 +621,11 @@
    "libft/ft_strjoinmod.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strjoinmod.c"
  },
@@ -513,7 +639,11 @@
    "libft/ft_strjoinmodnbits.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strjoinmodnbits.c"
  },
@@ -527,7 +657,11 @@
    "libft/ft_strlcat.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strlcat.c"
  },
@@ -541,7 +675,11 @@
    "libft/ft_strlcpy.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strlcpy.c"
  },
@@ -555,7 +693,11 @@
    "libft/ft_strlen.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strlen.c"
  },
@@ -569,7 +711,11 @@
    "libft/ft_strmapi.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strmapi.c"
  },
@@ -583,7 +729,11 @@
    "libft/ft_strncmp.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strncmp.c"
  },
@@ -597,7 +747,11 @@
    "libft/ft_strnstr.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strnstr.c"
  },
@@ -611,7 +765,11 @@
    "libft/ft_strrchr.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strrchr.c"
  },
@@ -625,7 +783,11 @@
    "libft/ft_strtrim.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_strtrim.c"
  },
@@ -639,7 +801,11 @@
    "libft/ft_substr.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_substr.c"
  },
@@ -653,7 +819,11 @@
    "libft/ft_tolower.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_tolower.c"
  },
@@ -667,7 +837,11 @@
    "libft/ft_toupper.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_toupper.c"
  },
@@ -681,7 +855,11 @@
    "libft/ft_lstadd_back_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstadd_back_bonus.c"
  },
@@ -695,7 +873,11 @@
    "libft/ft_lstdelone_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstdelone_bonus.c"
  },
@@ -709,7 +891,11 @@
    "libft/ft_lstmap_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstmap_bonus.c"
  },
@@ -723,7 +909,11 @@
    "libft/ft_lstadd_front_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstadd_front_bonus.c"
  },
@@ -737,7 +927,11 @@
    "libft/ft_lstiter_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstiter_bonus.c"
  },
@@ -751,7 +945,11 @@
    "libft/ft_lstnew_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstnew_bonus.c"
  },
@@ -765,7 +963,11 @@
    "libft/ft_lstclear_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstclear_bonus.c"
  },
@@ -779,7 +981,11 @@
    "libft/ft_lstlast_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstlast_bonus.c"
  },
@@ -793,7 +999,11 @@
    "libft/ft_lstsize_bonus.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/ft_lstsize_bonus.c"
  },
@@ -807,7 +1017,11 @@
    "libft/get_next_line.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
   "file": "libft/get_next_line.c"
  },
@@ -816,13 +1030,17 @@
   "arguments": [
    "cc",
    "-o",
-   "srcs/ft_check_map_utils.o",
+   "srcs/ft_utils_map.o",
    "-c",
-   "srcs/ft_check_map_utils.c",
+   "srcs/ft_utils_map.c",
    "-Wall",
    "-Wextra",
-   "-g"
+   "-I",
+   "minilibx",
+   "-L",
+   "minilibx",
+   "-lmlx"
   ],
-  "file": "srcs/ft_check_map_utils.c"
+  "file": "srcs/ft_utils_map.c"
  }
 ]
