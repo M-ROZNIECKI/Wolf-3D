@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:39:57 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 17:44:28 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 13:59:02 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ static void	ft_fill_tab(t_map *map)
 		temp = temp->next;
 		i++;
 	}
+	ft_lst_clear(&map->ch_map, free);
 	ft_valid_map(map);
 	ft_start_pos(map);
 	if (map->start_x == map->map_x || map->start_y == map->map_y)
@@ -101,14 +102,14 @@ static void	ft_fill_map(t_wolf *wolf)
 {
 	unsigned int	temp;
 
-	wolf->map.ch_map = ft_lstnew(ft_strdup(wolf->line));
+	wolf->map.ch_map = ft_lst_new(ft_strdup(wolf->line));
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
 	while ((get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
 		if (wolf->line[0] == '1' || wolf->line[0] == '0')
 		{
-			ft_lstadd_back(&wolf->map.ch_map, ft_lstnew(ft_strdup(wolf->line)));
+			ft_lst_add_back(&wolf->map.ch_map, ft_lst_new(ft_strdup(wolf->line)));
 			wolf->map.map_y++;
 			if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
 				wolf->map.map_x = temp;

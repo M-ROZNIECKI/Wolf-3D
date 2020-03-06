@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:47 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/03/06 11:09:44 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 13:25:07 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define WOLF_H
 # include "libftprintf.h"
 # include <stdio.h>
-# include <mlx.h>
+//# include <mlx.h>
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
@@ -74,7 +74,7 @@ void		ft_fill_res(t_win *win, char *entry, unsigned short *ok);
 void		ft_texture(t_wolf *wolf);
 void		ft_start_pos(t_map *map);
 void		ft_lst_clear(t_lst_map **lst, void (*del)(void*));
-void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new)
+void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new);
 t_lst_map	*ft_lst_new(void *content);
 
 #endif

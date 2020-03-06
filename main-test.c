@@ -29,8 +29,8 @@
 
 int main(int argc, char const *argv[])
 {
-	void *fistyland;
-	void *my_mlx;
+//	void *fistyland;
+//	void *my_mlx;
 	t_wolf *wolf;
 
 	if (!(wolf = malloc(sizeof(t_wolf))))
@@ -40,9 +40,9 @@ int main(int argc, char const *argv[])
 		wolf->ok = 0;
 		ft_init_map(wolf);
 		printf("everything is ok");
-		my_mlx = mlx_init();
-		fistyland = mlx_new_window(my_mlx, wolf->win.res_x, wolf->win.res_y, "E1M1");
-		mlx_loop(my_mlx);
+//		my_mlx = mlx_init();
+//		fistyland = mlx_new_window(my_mlx, wolf->win.res_x, wolf->win.res_y, "E1M1");
+//		mlx_loop(my_mlx);
 	}
 	return (0);
 }
