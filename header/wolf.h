@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:47 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 19:37:15 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 11:09:44 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
+
+typedef struct		s_lst_map
+{
+	char				*content;
+	struct s_lst_map	*next;
+}					t_lst_map;
 
 typedef struct		s_sprite
 {
@@ -62,10 +68,13 @@ typedef struct		s_wolf
 	unsigned short	ok;
 }					t_wolf;
 
-void	ft_error(char error, int line, const char *file, const char *function);
-void	ft_init_map(t_wolf *wolf);
-void	ft_fill_res(t_win *win, char *entry, unsigned short *ok);
-void	ft_texture(t_wolf *wolf);
-void	ft_start_pos(t_map *map);
+void		ft_error(char error, int line, const char *file, const char *function);
+void		ft_init_map(t_wolf *wolf);
+void		ft_fill_res(t_win *win, char *entry, unsigned short *ok);
+void		ft_texture(t_wolf *wolf);
+void		ft_start_pos(t_map *map);
+void		ft_lst_clear(t_lst_map **lst, void (*del)(void*));
+void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new)
+t_lst_map	*ft_lst_new(void *content);
 
 #endif

@@ -10,8 +10,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/libftprintf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/libftprintf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_atof.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_atoi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_bzero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_calloc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_hhitoa_base.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_hitoa_base.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isalnum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isalpha.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isascii.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isdigit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isprint.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_itoa.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_itoa_base.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_litoa_base.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_llitoa.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_llitoa_base.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_front_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstclear_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstdelone_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstiter_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstlast_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstmap_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstnew_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstsize_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memccpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memcmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memcpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memmove.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memset.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putchar_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putendl_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putnbr_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putstr_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_split.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strdup.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strjoin.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strjoinmod.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strjoinmodnbits.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strlcat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strlcpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strlen.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strmapi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strncmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strnstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strrchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strtrim.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_substr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_tolower.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_toupper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/get_next_line.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/libft.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_lst.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_lst.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +104,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1582896349450" />
+        <entry key="$PROJECT_DIR$" value="1583488290256" />
         <entry key="$PROJECT_DIR$/compile_commands.json" value="2511071888" />
       </map>
     </option>
@@ -78,6 +138,7 @@
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="discord-application" />
@@ -109,6 +170,7 @@
       <workItem from="1582896542848" duration="476000" />
       <workItem from="1582897054785" duration="61000" />
       <workItem from="1582897139893" duration="953000" />
+      <workItem from="1583489264564" duration="3022000" />
     </task>
     <servers />
   </component>
@@ -116,6 +178,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="348" y="950" key="#C/C++" timestamp="1583489215305">
+      <screen x="67" y="27" width="1373" height="2533" />
+    </state>
+    <state x="348" y="950" key="#C/C++/67.27.1373.2533/1440.1480.1920.1080@67.27.1373.2533" timestamp="1583489215305" />
     <state x="667" y="276" width="642" height="553" key="#Unnamed" timestamp="1581977624097">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -150,9 +216,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="622" y="329" width="741" height="669" key="EditFileWatcherDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581977867236" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582896941907">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="592" y="708" width="374" height="1165" key="FileChooserDialogImpl" timestamp="1583488836913">
+      <screen x="67" y="27" width="1373" height="2533" />
     </state>
+    <state x="592" y="708" width="374" height="1165" key="FileChooserDialogImpl/67.27.1373.2533/1440.1480.1920.1080@67.27.1373.2533" timestamp="1583488836913" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1582896941907" />
     <state width="2518" height="518" key="GridCell.Tab.0.bottom" timestamp="1582828569316">
       <screen x="0" y="0" width="2560" height="1440" />
@@ -199,9 +266,10 @@
     </state>
     <state x="573" y="219" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1582821863565" />
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1583142580918" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1582721809245">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="498" y="876" key="com.intellij.ide.util.TipDialog" timestamp="1583489264622">
+      <screen x="67" y="27" width="1373" height="2533" />
     </state>
+    <state x="498" y="876" key="com.intellij.ide.util.TipDialog/67.27.1373.2533/1440.1480.1920.1080@67.27.1373.2533" timestamp="1583489264622" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1582721809245" />
     <state x="874" y="290" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1581977584696">
       <screen x="67" y="27" width="1853" height="1053" />

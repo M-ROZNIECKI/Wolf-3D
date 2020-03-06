@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:38 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 17:45:38 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/03/06 12:54:23 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <locale.h>
 # include <langinfo.h>
 # include <wchar.h>
-# include "../libft/libft.h"
+# include "libft.h"
 
 /*
 **	conv contain convert symbol in this order :

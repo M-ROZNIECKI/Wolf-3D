@@ -12,9 +12,9 @@
 
 #include "../header/wolf.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lst_clear(t_lst_map **lst, void (*del)(void*))
 {
-	t_list	*elem;
+    t_lst_map	*elem;
 
 	while (*lst && del)
 	{
@@ -25,25 +25,25 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 }
 
-void	ft_lstadd_back(t_lst_map **alst, t_lst_map *new)
+void	ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new)
 {
 	t_lst_map	*last;
 
-	if (new && *alst)
+	if (new && *a_lst)
 	{
-		last = *alst;
+		last = *a_lst;
 		while (last->next)
 			last = last->next;
 		last->next = new;
 	}
-	else if (!(*alst) && new)
+	else if (!(*a_lst) && new)
 	{
-		*alst = new;
+		*a_lst = new;
 		new->next = NULL;
 	}
 }
 
-t_lst_map	*ft_lstnew(void *content)
+t_lst_map	*ft_lst_new(void *content)
 {
 	t_lst_map *str;
 
