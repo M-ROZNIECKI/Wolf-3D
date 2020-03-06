@@ -21,12 +21,6 @@
 #  define BUFFER_SIZE 32
 # endif
 
-typedef struct		s_lst_map
-{
-	char				*content;
-	struct s_lst_map	*next;
-}					t_lst_map;
-
 typedef struct	s_list
 {
 	void			*content;
