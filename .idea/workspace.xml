@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-test.c" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/compile_commands.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +44,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1582704771000" />
-        <entry key="$PROJECT_DIR$/compile_commands.json" value="3386289035" />
+        <entry key="$PROJECT_DIR$" value="1582896349450" />
+        <entry key="$PROJECT_DIR$/compile_commands.json" value="2511071888" />
       </map>
     </option>
     <option name="projectSyncType">
@@ -80,8 +79,8 @@
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../06_Wolf3D_16_01_2020" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
   </component>
   <component name="RunManager">
     <configuration name="Make" type="CLionExternalRunConfiguration" factoryName="Application" PROGRAM_PARAMS="map.cub" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Wolf-3D" TARGET_NAME="make" CONFIG_NAME="make" RUN_PATH="$PROJECT_DIR$/a.out">
@@ -107,6 +106,9 @@
       <workItem from="1582821211151" duration="282000" />
       <workItem from="1582821506657" duration="4382000" />
       <workItem from="1582875277589" duration="814000" />
+      <workItem from="1582896542848" duration="476000" />
+      <workItem from="1582897054785" duration="61000" />
+      <workItem from="1582897139893" duration="953000" />
     </task>
     <servers />
   </component>
@@ -131,6 +133,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="771" y="260" width="424" height="584" key="#com.intellij.ide.macro.MacrosDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581977582382" />
+    <state x="676" y="289" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582897014178">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="676" y="289" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1582897014178" />
     <state x="733" y="383" width="510" height="337" key="#com.intellij.tools.ToolEditorDialog" timestamp="1581977583526">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -144,10 +150,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="622" y="329" width="741" height="669" key="EditFileWatcherDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581977867236" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582728203754">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582896941907">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1582728203754" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1582896941907" />
     <state width="2518" height="518" key="GridCell.Tab.0.bottom" timestamp="1582828569316">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -188,11 +194,11 @@
     </state>
     <state width="2518" height="518" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582828569317" />
     <state width="1807" height="344" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582073754112" />
-    <state x="573" y="219" key="SettingsEditor" timestamp="1582821863565">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="482" y="187" key="SettingsEditor" timestamp="1583142580918">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="573" y="219" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1582821863565" />
-    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1581977869049" />
+    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1583142580918" />
     <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1582721809245">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
