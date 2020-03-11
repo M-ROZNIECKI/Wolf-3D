@@ -55,6 +55,8 @@ typedef struct		s_win
 {
 	int 			res_x;
 	int				res_y;
+	void			*my_mlx;
+	void			*win;
 }					t_win;
 
 typedef struct		s_wolf
