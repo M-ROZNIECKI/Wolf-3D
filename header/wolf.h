@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:47 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/03/12 03:05:42 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 15:15:10 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ typedef struct		s_texture
 {
 	void			*img;
 	char 			*data;
+	int 			x;
+	int 			y;
 }					t_texture;
-
+/* TODO change no, so, ... and put it directly in t_texture to just make a loop to help in init tex
+**
+*/
 typedef struct		s_sprite
 {
 	char			*no;
@@ -64,6 +68,7 @@ typedef struct		s_win
 	int				res_y;
 	void			*my_mlx;
 	void			*win;
+	char 			*name;
 }					t_win;
 
 typedef struct		s_wolf
