@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   ft_init_tex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fenrir <fenrir@student.le-101.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/11 21:35:45 by fenrir            #+#    #+#             */
-/*   Updated: 2020/03/12 03:05:42 by fenrir           ###   ########lyon.fr   */
+/*   Created: 2020/03/12 03:15:49 by fenrir            #+#    #+#             */
+/*   Updated: 2020/03/12 03:18:53 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/wolf.h"
 
-static void	ft_init_w(t_win *win)
+void	ft_init_tex(t_wolf wolf)
 {
-	win->my_mlx = mlx_init();
-	win->win = mlx_new_windows(win->my_mlx, win->res_x, win->res_y, "NOP");
-}
 
-void		ft_init(t_wolf *wolf)
-{
-	ft_init_map(wolf);
-	ft_init_w(&wolf->win);
-	ft_init_tex(wolf);
 }

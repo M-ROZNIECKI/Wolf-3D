@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_init.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_init.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
