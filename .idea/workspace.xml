@@ -11,12 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-test.c" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.cub" beforeDir="false" afterPath="$PROJECT_DIR$/map.cub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ft_error.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ft_init.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ft_init_tex.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_init_tex.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +43,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1583504121427" />
+        <entry key="$PROJECT_DIR$" value="1584016644000" />
         <entry key="$PROJECT_DIR$/compile_commands.json" value="4241426310" />
       </map>
     </option>
@@ -118,6 +112,7 @@
       <workItem from="1583489264564" duration="3022000" />
       <workItem from="1583497009921" duration="3784000" />
       <workItem from="1583940446360" duration="5162000" />
+      <workItem from="1584024787841" duration="230000" />
     </task>
     <servers />
   </component>
