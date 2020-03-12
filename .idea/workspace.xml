@@ -10,10 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e89e589e-bfa4-4146-8326-2648cb725025" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header/wolf.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/wolf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-test.c" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.cub" beforeDir="false" afterPath="$PROJECT_DIR$/map.cub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_error.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_error.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ft_init.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_init_tex.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_init_tex.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

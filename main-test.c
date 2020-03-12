@@ -36,7 +36,8 @@ int main(int argc, char const *argv[])
 	if (!(wolf = malloc(sizeof(t_wolf))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	if (argc == 2) {
-		wolf->fd = open(argv[1], O_RDONLY);
+		wolf->win.name = ft_strdup(argv[1]);
+		wolf->fd = open(wolf->win.name, O_RDONLY);
 		wolf->ok = 0;
 		ft_init_map(wolf);
 		printf("everything is ok");

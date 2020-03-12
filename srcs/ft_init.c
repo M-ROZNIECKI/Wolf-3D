@@ -15,7 +15,7 @@
 static void	ft_init_w(t_win *win)
 {
 	win->my_mlx = mlx_init();
-	win->win = mlx_new_windows(win->my_mlx, win->res_x, win->res_y, "NOP");
+	win->win = mlx_new_windows(win->my_mlx, win->res_x, win->res_y, win->name);
 }
 
 void		ft_init(t_wolf *wolf)
