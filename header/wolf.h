@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:45:47 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/03/06 13:25:07 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/03/12 03:05:42 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,19 @@ typedef struct		s_lst_map
 	struct s_lst_map	*next;
 }					t_lst_map;
 
+typedef struct		s_texture
+{
+	void			*img;
+	char 			*data;
+}					t_texture;
+
 typedef struct		s_sprite
 {
 	char			*no;
 	char			*so;
 	char			*we;
 	char			*ea;
+	t_texture		wall[4];
 	char			*s;
 	unsigned char	f[3];
 	unsigned char	c[3];
@@ -78,5 +85,6 @@ void		ft_start_pos(t_map *map);
 void		ft_lst_clear(t_lst_map **lst, void (*del)(void*));
 void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new);
 t_lst_map	*ft_lst_new(void *content);
+void		ft_init(t_wolf *wolf);
 
 #endif
