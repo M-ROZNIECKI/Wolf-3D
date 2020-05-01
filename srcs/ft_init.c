@@ -21,5 +21,5 @@ void	ft_init_w(t_win *win)
 void	ft_init(t_wolf *wolf)
 {
 	ft_init_map(wolf);
-	ft_init_w(&wolf->win);
+	//ft_init_w(&wolf->win);
 }
