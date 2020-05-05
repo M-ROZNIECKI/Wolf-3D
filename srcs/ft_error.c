@@ -29,12 +29,12 @@ static void	ft_one_valid_format(void)
 			"NO ./north_texture\nEA ./east_texture\nSO   ./south_texture\n",
 			"WE ./west_texture\n\n\nF     220,100,0\n\nS ./sprite_texture\n",
 			"C 225,30,0\n",
-			"1 1 1 1 1 1 1 1\n",
-			"1 1 0 0 S 0 0 1\n",
-			"1 0 0 1 1 1 0 1\n",
-			"1 0 1 0 0 1 0 1\n",
-			"1 0 0 0 1 0 0 1\n",
-			"1 1 1 1 1 1 1 1\n");
+			"11111111 111\n",
+			"1100S0011101\n",
+			"100111000001\n",
+			"101001010001\n",
+			"100010011101\n",
+			"11111111 111\n");
 }
 
 static void	ft_error_duplic_elem(void)
