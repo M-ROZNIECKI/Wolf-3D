@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:39:57 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/03/06 13:59:02 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/05/05 10:50:05 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,17 @@ static void	ft_valid_map(t_map *map)
 {
 	map->temp_y = -1;
 	map->temp_x = -1;
-
 	while(++map->temp_y < map->map_y)
+	{
 		while(++map->temp_x < map->map_x)
 			if (map->map[map->temp_y][map->temp_x] == '0' ||
 			map->map[map->temp_y][map->temp_x] == 'N' ||
 			map->map[map->temp_y][map->temp_x] == 'S' ||
 			map->map[map->temp_y][map->temp_x] == 'E' ||
 			map->map[map->temp_y][map->temp_x] == 'W')
-				if (map->temp_y == 0 || map->temp_x == 0 ||
-					map->temp_y == map->map_y - 1 ||
-					map->map[map->temp_y - 1][map->temp_x - 1] == ' ' ||
-					map->map[map->temp_y - 1][map->temp_x] == ' ' ||
-					map->map[map->temp_y - 1][map->temp_x + 1] == ' ' ||
-					map->map[map->temp_y + 1][map->temp_x - 1] == ' ' ||
-					map->map[map->temp_y + 1][map->temp_x] == ' ' ||
-					map->map[map->temp_y + 1][map->temp_x + 1] == ' ' ||
-					map->map[map->temp_y][map->temp_x - 1] == ' ' ||
-					map->map[map->temp_y][map->temp_x + 1] == ' ' ||
-					map->map[map->temp_y][map->temp_x + 1] == '\0')
-					ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+				ft_test_pos(map);
+		map->temp_x = -1;
+	}
 }
 
 static void	ft_fill_tab(t_map *map)
@@ -63,9 +54,6 @@ static void	ft_fill_tab(t_map *map)
 		i++;
 	}
 	ft_lst_clear(&map->ch_map, free);
-	ft_start_pos(map);
-/*	if (map->start_x == map->map_x || map->start_y == map->map_y)
-		ft_error(1, __LINE__, __FILE__, __FUNCTION__);*/
 	ft_valid_map(map);
 }
 
@@ -93,14 +81,12 @@ static void	ft_fill_map(t_wolf *wolf)
 		else
 		{
 			free(wolf->line);
-			//ft_del_space(&wolf->map);
 			ft_fill_tab(&wolf->map);
 			return;
 		}
 		free(wolf->line);
 	}
 	wolf->ok += 0x0100;
-	//ft_del_space(&wolf->map);
 	ft_fill_tab(&wolf->map);
 }
 
