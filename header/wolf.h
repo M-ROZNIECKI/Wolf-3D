@@ -14,6 +14,7 @@
 # define WOLF_H
 # include "libftprintf.h"
 # include <stdio.h>
+# include <math.h>
 # ifndef MLX_H
 #  include "../minilibx-linux/mlx.h"
 # else
@@ -45,8 +46,8 @@ typedef struct		s_sprite
 {
 	t_texture		wall[4];
 	t_texture		s;
-	unsigned char	f[3];
-	unsigned char	c[3];
+	char			f[3];
+	char			c[3];
 }					t_sprite;
 
 typedef struct		s_map
@@ -62,7 +63,7 @@ typedef struct		s_map
 	unsigned int	start_y;
 	unsigned int	temp_x;
 	unsigned int	temp_y;
-	unsigned int	pass;
+	unsigned int	hit;
 }					t_map;
 
 typedef struct		s_player
@@ -81,6 +82,18 @@ typedef struct		s_player
 	int				turn_left;
 }					t_player;
 
+typedef struct		s_ray
+{
+	double			x_ray_position;
+	double			y_ray_position;
+	double			x_ray_direction;
+	double			y_ray_direction;
+	double			x_side_distance;
+	double			y_side_distance;
+	double			x_delta_distance;
+	double			y_delta_distance;
+}					t_ray;
+
 typedef struct		s_win
 {
 	int 			res_x;
@@ -90,16 +103,37 @@ typedef struct		s_win
 	char 			*name;
 }					t_win;
 
+typedef struct		s_frame
+{
+	int				line_height;
+	int				draw_start;
+	int				draw_end;
+	int				side;
+	int				color;
+	int				r;
+	int				g;
+	int				b;
+	int				a;
+	int				x;
+	int 			item;
+	double			wall_distance;
+	double			ux;
+}					t_frame;
+
 typedef struct		s_wolf
 {
 	t_win			win;
 	t_map			map;
 	t_sprite		sprite;
 	t_player		player;
+	t_ray			ray;
+	t_texture 		image;
+	t_frame			frame;
 	char			*line;
 	int				fd;
 	int				ret;
 	unsigned short	ok;
+	unsigned short	selec;
 }					t_wolf;
 
 void		ft_error(char error, int line, const char *file, const char *function);
@@ -112,5 +146,9 @@ void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new);
 t_lst_map	*ft_lst_new(void *content);
 void		ft_init(t_wolf *wolf);
 void		ft_init_tex(t_wolf *wolf);
+void		ft_frame(t_wolf *wolf);
+void		ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf);
+void		ft_wall_detec_init(t_wolf *wolf);
+void		ft_wall_detec(t_wolf *wolf);
 
 #endif

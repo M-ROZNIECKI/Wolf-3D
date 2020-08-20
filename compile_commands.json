@@ -102,5 +102,44 @@
    "-Wextra"
   ],
   "file": "main-test.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_draw.o",
+   "-c",
+   "srcs/ft_draw.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_draw.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_raycast.o",
+   "-c",
+   "srcs/ft_raycast.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_raycast.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_detec.o",
+   "-c",
+   "srcs/ft_detec.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_detec.c"
  }
 ]

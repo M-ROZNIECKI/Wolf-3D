@@ -27,6 +27,9 @@ SRC =	srcs/ft_error.c\
 		srcs/init_map.c\
 		srcs/ft_utils_map.c\
 		srcs/ft_lst.c\
+		srcs/ft_draw.c\
+		srcs/ft_raycast.c\
+		srcs/ft_detec.c\
         main-test.c
 
 HEADER =	header/$(wildcard *.h)

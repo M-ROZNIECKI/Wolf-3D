@@ -46,4 +46,5 @@ void	ft_init(t_wolf *wolf)
 	ft_init_w(&wolf->win);
 	ft_init_tex(wolf);
 	ft_init_player(wolf);
+	ft_frame(wolf);
 }
