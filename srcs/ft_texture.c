@@ -51,11 +51,18 @@ static void	ft_fill_color(unsigned char color[3], char *entry)
 	color[2] = ft_atoi(&entry[i]);
 }
 
+/*
+** wall[0] = north
+** wall[1] = south
+** wall[2] = east
+** wall[3] = west
+*/
+
 static void	ft_texture2(t_wolf *wolf)
 {
 	if (wolf->line[0] == 'E' && (wolf->ok & (unsigned)0x010) == 0)
 	{
-		ft_copy_path(&wolf->sprite.ea, &wolf->line[2]);
+		ft_copy_path(&wolf->sprite.wall[2].path, &wolf->line[2]);
 		wolf->ok += 0x010;
 	}
 	else if (wolf->line[0] == 'F' && (wolf->ok & (unsigned)0x020) == 0)
@@ -76,22 +83,22 @@ void		ft_texture(t_wolf *wolf)
 {
 	if (wolf->line[0] == 'S' && wolf->line[1] == 'O' && (wolf->ok & (unsigned)0x01) == 0)
 	{
-		ft_copy_path(&wolf->sprite.so, &wolf->line[2]);
+		ft_copy_path(&wolf->sprite.wall[1].path, &wolf->line[2]);
 		wolf->ok += 0x01;
 	}
 	else if (wolf->line[0] == 'S' && (wolf->ok & (unsigned)0x02) == 0)
 	{
-		ft_copy_path(&wolf->sprite.s, &wolf->line[1]);
+		ft_copy_path(&wolf->sprite.s.path, &wolf->line[1]);
 		wolf->ok += 0x02;
 	}
 	else if (wolf->line[0] == 'N' && (wolf->ok & (unsigned)0x04) == 0)
 	{
-		ft_copy_path(&wolf->sprite.no, &wolf->line[2]);
+		ft_copy_path(&wolf->sprite.wall[0].path, &wolf->line[2]);
 		wolf->ok += 0x04;
 	}
 	else if (wolf->line[0] == 'W' && (wolf->ok & (unsigned)0x08) == 0)
 	{
-		ft_copy_path(&wolf->sprite.we, &wolf->line[2]);
+		ft_copy_path(&wolf->sprite.wall[3].path, &wolf->line[2]);
 		wolf->ok += 0x08;
 	}
 	else

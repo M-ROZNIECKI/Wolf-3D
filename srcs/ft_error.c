@@ -19,7 +19,7 @@
 ** -1	: error processing .map file
 ** 0	: an element in .cub file was set more than one times
 ** 1	: bad format
-** TODO 2	: sprite not in xmp or png
+** TODO 2	: sprite not in xmp format
 */
 
 static void	ft_one_valid_format(void)

@@ -14,12 +14,27 @@
 
 void	ft_init_tex(t_wolf *wolf)
 {
-	if (0 == ft_strncmp(&wolf->sprite.no[ft_strlen(wolf->sprite.no) - 3], "png", 3))
-		wolf->sprite.wall[0].img = mlx_png_file_to_image(wolf->win.my_mlx,\
-		wolf->sprite.no, &wolf->sprite.wall[0].x, &wolf->sprite.wall[0].y);
-	else if (0 == ft_strncmp(&wolf->sprite.no[ft_strlen(wolf->sprite.no) - 3], "xmp", 3))
-		wolf->sprite.wall[0].img = mlx_xmp_file_to_image(wolf->win.my_mlx,\
-		wolf->sprite.no, &wolf->sprite.wall[0].x, &wolf->sprite.wall[0].y);
+	int n;
+	n = -1;
+	while(++n < 4)
+	{
+		if (0 == ft_strncmp(&wolf->sprite.wall[n].path[ft_strlen(\
+			wolf->sprite.wall[n].path) - 3], "xmp", 3))
+			wolf->sprite.wall[n].img = mlx_xpm_file_to_image(wolf->win.my_mlx, \
+			wolf->sprite.wall[n].path, &wolf->sprite.wall[n].x, \
+			&wolf->sprite.wall[n].y);
+		else
+			ft_error(2, __LINE__, __FILE__, __FUNCTION__);
+		wolf->sprite.wall[n].data = mlx_get_data_addr(wolf->sprite.wall[n].img, \
+			&wolf->sprite.wall[n].bpp, &wolf->sprite.wall[n].sizeline, \
+			&wolf->sprite.wall[n].endian);
+	}
+	if (0 == ft_strncmp(&wolf->sprite.s.path[ft_strlen( \
+		wolf->sprite.s.path) - 3], "xmp", 3))
+		wolf->sprite.s.img = mlx_xpm_file_to_image(wolf->win.my_mlx, \
+		wolf->sprite.s.path, &wolf->sprite.s.x, &wolf->sprite.s.y);
 	else
 		ft_error(2, __LINE__, __FILE__, __FUNCTION__);
+	wolf->sprite.s.data = mlx_get_data_addr(wolf->sprite.s.img, \
+		&wolf->sprite.s.bpp, &wolf->sprite.s.sizeline, &wolf->sprite.s.endian);
 }

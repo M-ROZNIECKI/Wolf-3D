@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 
-#include "minilibx/mlx.h"
 #include "header/wolf.h"
 #include <stdio.h>
 #include <sys/types.h>
@@ -39,7 +38,8 @@ int main(int argc, char const *argv[])
 		wolf->win.name = ft_strdup(argv[1]);
 		wolf->fd = open(wolf->win.name, O_RDONLY);
 		wolf->ok = 0;
-		ft_init_map(wolf);
+		ft_init(wolf);
+//		ft_init_map(wolf);
 		printf("everything is ok");
 //		my_mlx = mlx_init();
 //		fistyland = mlx_new_window(my_mlx, wolf->win.res_x, wolf->win.res_y, "E1M1");

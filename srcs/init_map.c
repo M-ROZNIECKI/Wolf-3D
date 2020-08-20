@@ -31,7 +31,11 @@ static void	ft_valid_map(t_map *map)
 			map->map[map->temp_y][map->temp_x] == 'S' ||
 			map->map[map->temp_y][map->temp_x] == 'E' ||
 			map->map[map->temp_y][map->temp_x] == 'W')
+			{
+				if (map->map[map->temp_y][map->temp_x] != '0')
+					map->dir = map->map[map->temp_y][map->temp_x];
 				ft_test_pos(map);
+			}
 		map->temp_x = -1;
 	}
 }

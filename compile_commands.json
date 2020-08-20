@@ -1,19 +1,6 @@
 [
  {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
-  "arguments": [
-   "cc",
-   "-o",
-   "main-test.o",
-   "-c",
-   "main-test.c",
-   "-Wall",
-   "-Wextra"
-  ],
-  "file": "main-test.c"
- },
- {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
   "arguments": [
    "cc",
    "-o",
@@ -26,7 +13,33 @@
   "file": "srcs/ft_error.c"
  },
  {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_init.o",
+   "-c",
+   "srcs/ft_init.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_init.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_init_tex.o",
+   "-c",
+   "srcs/ft_init_tex.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_init_tex.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
   "arguments": [
    "cc",
    "-o",
@@ -39,7 +52,7 @@
   "file": "srcs/ft_texture.c"
  },
  {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
   "arguments": [
    "cc",
    "-o",
@@ -52,7 +65,7 @@
   "file": "srcs/init_map.c"
  },
  {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
   "arguments": [
    "cc",
    "-o",
@@ -65,7 +78,7 @@
   "file": "srcs/ft_utils_map.c"
  },
  {
-  "directory": "/mnt/fenros/42_project/Wolf-3D",
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
   "arguments": [
    "cc",
    "-o",
@@ -76,5 +89,18 @@
    "-Wextra"
   ],
   "file": "srcs/ft_lst.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "main-test.o",
+   "-c",
+   "main-test.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "main-test.c"
  }
 ]

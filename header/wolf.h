@@ -14,7 +14,11 @@
 # define WOLF_H
 # include "libftprintf.h"
 # include <stdio.h>
-//# include <mlx.h>
+# ifndef MLX_H
+#  include "../minilibx-linux/mlx.h"
+# else
+#  include <mlx.h>
+# endif
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
@@ -29,20 +33,18 @@ typedef struct		s_texture
 {
 	void			*img;
 	char 			*data;
+	char 			*path;
 	int 			x;
 	int 			y;
+	int				bpp;
+	int				sizeline;
+	int				endian;
 }					t_texture;
-/* TODO change no, so, ... and put it directly in t_texture to just make a loop to help in init tex
-**
-*/
+
 typedef struct		s_sprite
 {
-	char			*no;
-	char			*so;
-	char			*we;
-	char			*ea;
 	t_texture		wall[4];
-	char			*s;
+	t_texture		s;
 	unsigned char	f[3];
 	unsigned char	c[3];
 }					t_sprite;
@@ -51,6 +53,7 @@ typedef struct		s_map
 {
 	t_lst_map		*ch_map;
 	char			**map;
+	char 			dir;
 	unsigned int	map_y;
 	unsigned int	map_x;
 	unsigned int	check_x;
@@ -61,6 +64,22 @@ typedef struct		s_map
 	unsigned int	temp_y;
 	unsigned int	pass;
 }					t_map;
+
+typedef struct		s_player
+{
+	double			x_camera;
+	double			x_pos;
+	double			y_pos;
+	double			x_dir;
+	double			y_dir;
+	double			x_plane;
+	double			y_plane;
+	double			x_old_direction;
+	double			move_speed;
+	double			turn_rate;
+	int				turn_right;
+	int				turn_left;
+}					t_player;
 
 typedef struct		s_win
 {
@@ -76,6 +95,7 @@ typedef struct		s_wolf
 	t_win			win;
 	t_map			map;
 	t_sprite		sprite;
+	t_player		player;
 	char			*line;
 	int				fd;
 	int				ret;
@@ -91,5 +111,6 @@ void		ft_lst_clear(t_lst_map **lst, void (*del)(void*));
 void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new);
 t_lst_map	*ft_lst_new(void *content);
 void		ft_init(t_wolf *wolf);
+void		ft_init_tex(t_wolf *wolf);
 
 #endif
