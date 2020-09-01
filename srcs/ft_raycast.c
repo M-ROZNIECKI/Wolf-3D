@@ -50,7 +50,7 @@ void	ft_raycast(t_wolf *wolf)
 		wolf->frame.draw_end = wolf->frame.line_height / 2 + wolf->win.res_y / 2;
 		if (wolf->frame.draw_end >= wolf->win.res_y)\
 			wolf->frame.draw_end = wolf->win.res_y - 1;
-		choose_texture_1(wolf);
+		choose_texture(wolf);
 		texture_calc(wolf);
 		ft_draw(wolf->frame.x, wolf->frame.draw_start, wolf->frame.draw_end, wolf);
 	}

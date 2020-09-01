@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main-test.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "header/wolf.h"
+#include "../header/wolf.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -28,22 +28,20 @@
 
 int main(int argc, char const *argv[])
 {
-//	void *fistyland;
-//	void *my_mlx;
 	t_wolf *wolf;
 
 	if (!(wolf = malloc(sizeof(t_wolf))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
-	if (argc == 2) {
-		wolf->win.name = ft_strdup(argv[1]);
-		wolf->fd = open(wolf->win.name, O_RDONLY);
-		wolf->ok = 0;
-		ft_init(wolf);
-//		ft_init_map(wolf);
-		printf("everything is ok");
-//		my_mlx = mlx_init();
-//		fistyland = mlx_new_window(my_mlx, wolf->win.res_x, wolf->win.res_y, "E1M1");
-//		mlx_loop(my_mlx);
-	}
+	if (argc != 2)
+		ft_error(2, __LINE__, __FILE__, __FUNCTION__);
+	wolf->win.name = ft_strdup(argv[1]);
+	wolf->fd = open(wolf->win.name, O_RDONLY);
+	wolf->ok = 0;
+	ft_init(wolf);
+	printf("initialisation complete");
+	mlx_hook(wolf->win.win, 2, (1L << 0), ft_press, &wolf);
+	mlx_hook(wolf->win.win, 3, (1L << 1), ft_release, &wolf);
+	mlx_hook(wolf->win.win, 17, 0, red_cross, (void *)0);
+	mlx_loop_hook(wolf->win.my_mlx, ft_move, &wolf);
 	return (0);
 }

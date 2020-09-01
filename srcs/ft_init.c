@@ -36,6 +36,8 @@ void 	ft_init_player(t_wolf *wolf)
 	wolf->player.y_plane = 0.66;
 	wolf->player.turn_left = 0;
 	wolf->player.turn_right = 0;
+	wolf->player.forward = 0;
+	wolf->player.backward = 0;
 	wolf->player.turn_rate = 0.1;
 	wolf->player.move_speed = 0.05;
 }

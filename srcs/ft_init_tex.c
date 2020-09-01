@@ -16,7 +16,7 @@ void	ft_init_tex(t_wolf *wolf)
 {
 	int n;
 	n = -1;
-	while(++n < 4)
+	while(++n < 5)
 	{
 		if (0 == ft_strncmp(&wolf->sprite.wall[n].path[ft_strlen(\
 			wolf->sprite.wall[n].path) - 3], "xmp", 3))
@@ -29,17 +29,9 @@ void	ft_init_tex(t_wolf *wolf)
 			&wolf->sprite.wall[n].bpp, &wolf->sprite.wall[n].sizeline, \
 			&wolf->sprite.wall[n].endian);
 	}
-	if (0 == ft_strncmp(&wolf->sprite.s.path[ft_strlen( \
-		wolf->sprite.s.path) - 3], "xmp", 3))
-		wolf->sprite.s.img = mlx_xpm_file_to_image(wolf->win.my_mlx, \
-		wolf->sprite.s.path, &wolf->sprite.s.x, &wolf->sprite.s.y);
-	else
-		ft_error(2, __LINE__, __FILE__, __FUNCTION__);
-	wolf->sprite.s.data = mlx_get_data_addr(wolf->sprite.s.img, \
-		&wolf->sprite.s.bpp, &wolf->sprite.s.sizeline, &wolf->sprite.s.endian);
 }
 
-void	choose_texture_1(t_wolf *wolf)
+void	choose_texture(t_wolf *wolf)
 {
 	if (wolf->frame.side == 0 && wolf->ray.x_ray_direction > 0)
 		wolf->selec = 0;

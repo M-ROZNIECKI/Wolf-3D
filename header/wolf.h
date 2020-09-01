@@ -15,11 +15,7 @@
 # include "libftprintf.h"
 # include <stdio.h>
 # include <math.h>
-# ifndef MLX_H
-#  include "../minilibx-linux/mlx.h"
-# else
-#  include <mlx.h>
-# endif
+# include <mlx.h>
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
@@ -44,8 +40,7 @@ typedef struct		s_texture
 
 typedef struct		s_sprite
 {
-	t_texture		wall[4];
-	t_texture		s;
+	t_texture		wall[5];
 	char			f[3];
 	char			c[3];
 }					t_sprite;
@@ -75,11 +70,14 @@ typedef struct		s_player
 	double			y_dir;
 	double			x_plane;
 	double			y_plane;
-	double			x_old_direction;
+	double			x_old_dir;
+	double			x_old_plane;
 	double			move_speed;
 	double			turn_rate;
 	int				turn_right;
 	int				turn_left;
+	int				forward;
+	int				backward;
 }					t_player;
 
 typedef struct		s_ray
@@ -109,11 +107,6 @@ typedef struct		s_frame
 	int				draw_start;
 	int				draw_end;
 	int				side;
-	int				color;
-	int				r;
-	int				g;
-	int				b;
-	int				a;
 	int				x;
 	int 			item;
 	double			wall_distance;
@@ -150,5 +143,10 @@ void		ft_frame(t_wolf *wolf);
 void		ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf);
 void		ft_wall_detec_init(t_wolf *wolf);
 void		ft_wall_detec(t_wolf *wolf);
+void		choose_texture(t_wolf *wolf);
+void		texture_calc(t_wolf *wolf);
+int			ft_press(int keycode, t_wolf *wolf);
+int			ft_release(int key, t_wolf *wolf);
+int			ft_move(t_wolf *wolf);
 
 #endif
