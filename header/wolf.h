@@ -148,5 +148,7 @@ void		texture_calc(t_wolf *wolf);
 int			ft_press(int keycode, t_wolf *wolf);
 int			ft_release(int key, t_wolf *wolf);
 int			ft_move(t_wolf *wolf);
+int 		ft_leave(t_wolf *wolf);
+void		ft_bmp(t_wolf *wolf);
 
 #endif

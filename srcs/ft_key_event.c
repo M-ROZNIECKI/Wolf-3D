@@ -20,7 +20,7 @@ int		ft_press(int keycode, t_wolf *wolf)
 	else if (keycode == KEY_ESC)
 	{
 		mlx_destroy_window(wolf->win.my_mlx, wolf->win.win);
-		exit(1);
+		ft_leave(wolf);
 	}
 	return (0);
 }

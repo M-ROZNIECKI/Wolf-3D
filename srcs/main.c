@@ -32,16 +32,17 @@ int main(int argc, char const *argv[])
 
 	if (!(wolf = malloc(sizeof(t_wolf))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
-	if (argc != 2)
+	if (argc < 2 || argc > 3)
 		ft_error(2, __LINE__, __FILE__, __FUNCTION__);
 	wolf->win.name = ft_strdup(argv[1]);
 	wolf->fd = open(wolf->win.name, O_RDONLY);
 	wolf->ok = 0;
 	ft_init(wolf);
-	printf("initialisation complete");
+	if (argc == 3 && ft_strncmp(argv[2], "--save", 6) == 0)
+		ft_bmp(wolf);
 	mlx_hook(wolf->win.win, 2, (1L << 0), ft_press, &wolf);
 	mlx_hook(wolf->win.win, 3, (1L << 1), ft_release, &wolf);
-	mlx_hook(wolf->win.win, 17, 0, red_cross, (void *)0);
+	mlx_hook(wolf->win.win, 17, 0, ft_leave, (void *)0);
 	mlx_loop_hook(wolf->win.my_mlx, ft_move, &wolf);
 	return (0);
 }

@@ -75,8 +75,15 @@ int			ft_move(t_wolf *wolf)
 	return (0);
 }
 
-//add free malloc and struct
 int 		ft_leave(t_wolf *wolf)
 {
+	int i;
+
+	i = -1;
+	while(wolf->map.map[++i])
+		free(wolf->map.map[i]);
+	free(wolf->map.map);
+	free(wolf->win.name);
+	free(wolf);
 	exit(0);
 }

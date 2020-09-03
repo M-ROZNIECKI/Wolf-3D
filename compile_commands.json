@@ -95,19 +95,6 @@
   "arguments": [
    "cc",
    "-o",
-   "main-test.o",
-   "-c",
-   "main-test.c",
-   "-Wall",
-   "-Wextra"
-  ],
-  "file": "main-test.c"
- },
- {
-  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
-  "arguments": [
-   "cc",
-   "-o",
    "srcs/ft_draw.o",
    "-c",
    "srcs/ft_draw.c",
@@ -141,5 +128,57 @@
    "-Wextra"
   ],
   "file": "srcs/ft_detec.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_key_event.o",
+   "-c",
+   "srcs/ft_key_event.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_key_event.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_move.o",
+   "-c",
+   "srcs/ft_move.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_move.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/main.o",
+   "-c",
+   "srcs/main.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/main.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_bmp_save.o",
+   "-c",
+   "srcs/ft_bmp_save.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_bmp_save.c"
  }
 ]
