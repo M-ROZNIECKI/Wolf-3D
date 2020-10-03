@@ -7,71 +7,65 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-static char	*ft_lit_end_4(int num)
-{
-	unsigned int temp;
-	char *hex;
-
-	temp = ft_itoa_base(num & 0x000000FF, "0123456789ABCDEF");
-	if (ft_strlen(temp) == 1)
-		temp = ft_strjoinmod("0", temp, 2);
-	hex =  ft_strjoinmod(temp, " ", 1);
-	temp = ft_itoa_base((num >> 8) & 0x000000FF, "0123456789ABCDEF");
-	if (ft_strlen(temp) == 1)
-		temp = ft_strjoinmod("0", temp, 2);
-	hex = ft_strjoinmod(hex, temp, 3);
-	hex = ft_strjoinmod(hex, " ", 1);
-	temp = ft_itoa_base((num >> 16) & 0x000000FF, "0123456789ABCDEF");
-	if (ft_strlen(temp) == 1)
-		temp = ft_strjoinmod("0", temp, 2);
-	hex = ft_strjoinmod(hex, temp, 3);
-	hex = ft_strjoinmod(hex, " ", 1);
-	temp = ft_itoa_base((num >> 24) & 0x000000FF, "0123456789ABCDEF");
-	if (ft_strlen(temp) == 1)
-		temp = ft_strjoinmod("0", temp, 2);
-	hex = ft_strjoinmod(hex, temp, 3);
-	hex = ft_strjoinmod(hex, "\n", 1);
-	return (hex);
-}
-
 static void	ft_fill_data(int fd, t_wolf *wolf)
 {
-	int x;
-	int y;
-	char *data;
+	char	*data;
+	int		x;
+	int		y;
+	int		sizeline;
 
-	y = wolf->image.y;
-	x = wolf->image.x;
-	data = ft_strdup("");
-	while(--y >= 0)
-		while (--x >= 0)
-			data = ft_strjoinmod(data, ft_lit_end_4(\
-				(wolf->image.data[x * 4 + 4 * wolf->win.res_x * y] << 16) +\
-				(wolf->image.data[x * 4 + 4 * wolf->win.res_x * y + 1] << 8) +\
-				(wolf->image.data[x * 4 + 4 * wolf->win.res_x * y + 2])), 3);
+	sizeline = (3 * wolf->win.res_x);
+	if ((sizeline % 4) != 0)
+		sizeline += 4 - (sizeline % 4);
+	y = wolf->win.res_y;
+	if (!(data = malloc(sizeof(char) * sizeline)))
+		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
+	while (--y >= 0)
+	{
+		x = 0;
+		ft_memset(data, 0, sizeline);
+		while (x < (wolf->win.res_x) * 3)
+		{
+			data[x] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y];
+			data[x + 1] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 1];
+			data[x + 2] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 2];
+			x += 3;
+		}
+		write(fd, data, sizeline);
+	}
+	free(data);
 }
-
 
 static void	ft_fill_header(int fd, t_wolf *wolf)
 {
-	char *header;
+	char	*header;
 
-	header = ft_strdup("42 4D\n00 00 00 00\n00 00 00 00\n36 00 00 00\n");
-	header = ft_strjoinmod(header, "\n28 00 00 00\n", 1);
-	header = ft_strjoinmod(header, ft_lit_end_4(wolf->image.x), 3);
-	header = ft_strjoinmod(header, ft_lit_end_4(wolf->image.y), 3);
-	header = ft_strjoinmod(header, "01 00\n18 00\n00 00 00 00\n", 1);
-	header = ft_strjoinmod(header, "00 00 00 00\n00 00 00 00\n", 1);
-	header = ft_strjoinmod(header, "00 00 00 00\n00 00 00 00\n", 1);
-	header = ft_strjoinmod(header, "00 00 00 00\n\n", 1);
-	write(fd, header, ft_strlen(header));
+	if (!(header = ft_calloc(sizeof(char), 55)))
+		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
+	header[0] = 0x42;
+	header[1] = 0x4D;
+	header[0x0A] = 0x36;
+	header[0x0E] = 0x28;
+	header[0x012] = wolf->win.res_x & 0x000000FF;
+	header[0x013] = (wolf->win.res_x >> 8) & 0x000000FF;
+	header[0x014] = (wolf->win.res_x >> 16) & 0x000000FF;
+	header[0x015] = (wolf->win.res_x >> 24) & 0x000000FF;
+	header[0x016] = wolf->win.res_y & 0x000000FF;
+	header[0x017] = (wolf->win.res_y >> 8) & 0x000000FF;
+	header[0x018] = (wolf->win.res_y >> 16) & 0x000000FF;
+	header[0x019] = (wolf->win.res_y >> 24) & 0x000000FF;
+	header[0x01A] = 0x01;
+	header[0x01C] = 0x18;
+	write(fd, header, 54);
+	free(header);
 }
 
 void		ft_bmp(t_wolf *wolf)
 {
 	int fd;
 
-	fd = open("save.bmp", O_CREAT);
+	fd = open("save.bmp", O_CREAT | O_WRONLY, 0777);
 	ft_fill_header(fd, wolf);
 	ft_fill_data(fd, wolf);
+	close(fd);
 }

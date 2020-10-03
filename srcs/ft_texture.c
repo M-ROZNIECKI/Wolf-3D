@@ -29,7 +29,7 @@ static void	ft_copy_path(char **fill, char *entry)
 	*fill = ft_strdup(&entry[i]);
 }
 
-static void	ft_fill_color(unsigned char color[3], char *entry)
+static void	ft_fill_color(char color[3], char *entry)
 {
 	int i;
 
@@ -88,7 +88,7 @@ void		ft_texture(t_wolf *wolf)
 	}
 	else if (wolf->line[0] == 'S' && (wolf->ok & (unsigned)0x02) == 0)
 	{
-		ft_copy_path(&wolf->sprite.s.path, &wolf->line[1]);
+		ft_copy_path(&wolf->sprite.wall[4].path, &wolf->line[1]);
 		wolf->ok += 0x02;
 	}
 	else if (wolf->line[0] == 'N' && (wolf->ok & (unsigned)0x04) == 0)

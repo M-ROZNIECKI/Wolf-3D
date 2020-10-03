@@ -25,6 +25,7 @@ void	ft_wall_detec_init_y(t_wolf *wolf)
 
 void	ft_wall_detec_init(t_wolf *wolf)
 {
+	wolf->frame.item = 0;
 	wolf->ray.x_delta_distance = sqrt(1 + (wolf->ray.y_ray_direction *\
 		wolf->ray.y_ray_direction) / (wolf->ray.x_ray_direction *\
 		wolf->ray.x_ray_direction));
@@ -60,8 +61,9 @@ void	ft_wall_detec(t_wolf *wolf)
 			wolf->map.map_y += wolf->map.check_y;
 			wolf->frame.side = 1;
 		}
-		if (wolf->map.map[wolf->map.map_x][wolf->map.map_y] == '1' ||\
-			wolf->map.map[wolf->map.map_x][wolf->map.map_y] == '2')
+		if (wolf->map.map[wolf->map.map_y][wolf->map.map_x] == '1')
 			wolf->map.hit = 1;
+/*		if (wolf->map.map[wolf->map.map_y][wolf->map.map_x] == '2')
+			wolf->frame.item = 1;*/
 	}
 }

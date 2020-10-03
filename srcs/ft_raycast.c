@@ -23,16 +23,17 @@ void	ft_ray_init(t_wolf *wolf, int x)
 	ft_wall_detec_init(wolf);
 	ft_wall_detec(wolf);
 	if (wolf->frame.side == 0)
-		wolf->frame.wall_distance = (wolf->map.map_x - wolf->ray.x_ray_position + \
-		(1 - (double)wolf->map.check_x) / 2) / wolf->ray.x_ray_direction;
+		wolf->frame.wall_distance = (wolf->map.map_x - wolf->ray.x_ray_position\
+		+ (1 - wolf->map.check_x) / 2) / wolf->ray.x_ray_direction;
 	else
-		wolf->frame.wall_distance = (wolf->map.map_y - wolf->ray.y_ray_position + \
-		(1 - (double)wolf->map.check_y) / 2) / wolf->ray.y_ray_direction;
+		wolf->frame.wall_distance = (wolf->map.map_y - wolf->ray.y_ray_position\
+		+ (1 - wolf->map.check_y) / 2) / wolf->ray.y_ray_direction;
 }
 
 void	ft_create_img(t_wolf *wolf)
 {
-	wolf->image.img = mlx_new_image(wolf->win.my_mlx, wolf->win.res_x, wolf->win.res_y);
+	wolf->image.img = mlx_new_image(wolf->win.my_mlx, wolf->win.res_x,\
+	wolf->win.res_y);
 	wolf->image.data = mlx_get_data_addr(wolf->image.img, &wolf->image.bpp,\
 		&wolf->image.sizeline, &wolf->image.endian);
 }

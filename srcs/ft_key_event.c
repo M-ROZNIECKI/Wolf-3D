@@ -5,8 +5,7 @@
 #include "../header/wolf.h"
 #include "../header/key.h"
 
-int		ft_press(int keycode, t_wolf *wolf)
-{
+int		ft_press(int keycode, t_wolf *wolf) {
 	if (keycode == KEY_W || keycode == KEY_UP)
 		wolf->player.forward = 1;
 	else if (keycode == KEY_S || keycode == KEY_DOWN)
@@ -16,7 +15,10 @@ int		ft_press(int keycode, t_wolf *wolf)
 	else if (keycode == KEY_A || keycode == KEY_LEFT)
 		wolf->player.turn_left = 1;
 	else if (keycode == KEY_SHIFT_L || keycode == KEY_SHIFT_R)
-		wolf->player.move_speed = 0.2;
+	{
+		wolf->player.turn_rate = FAST_ROT_SPEED;
+		wolf->player.move_speed = RUN_SPEED;
+	}
 	else if (keycode == KEY_ESC)
 	{
 		mlx_destroy_window(wolf->win.my_mlx, wolf->win.win);
@@ -36,6 +38,9 @@ int		ft_release(int key, t_wolf *wolf)
 	else if (key == KEY_A || key == KEY_LEFT)
 		wolf->player.turn_left = 0;
 	else if (key == KEY_SHIFT_L || key == KEY_SHIFT_R)
-		wolf->player.move_speed = 0.05;
+	{
+		wolf->player.turn_rate = ROTATION_SPEED;
+		wolf->player.move_speed = WALK_SPEED;
+	}
 	return (0);
 }

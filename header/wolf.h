@@ -19,6 +19,11 @@
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
+# define SPRITE_SIZE 0.5
+# define RUN_SPEED 0.15
+# define WALK_SPEED 0.08
+# define FAST_ROT_SPEED 0.1
+# define ROTATION_SPEED 0.05
 
 typedef struct		s_lst_map
 {
@@ -32,6 +37,7 @@ typedef struct		s_texture
 	char 			*data;
 	char 			*path;
 	int 			x;
+	int				tex_x;
 	int 			y;
 	int				bpp;
 	int				sizeline;
@@ -126,7 +132,7 @@ typedef struct		s_wolf
 	int				fd;
 	int				ret;
 	unsigned short	ok;
-	unsigned short	selec;
+	unsigned short	sel;
 }					t_wolf;
 
 void		ft_error(char error, int line, const char *file, const char *function);
