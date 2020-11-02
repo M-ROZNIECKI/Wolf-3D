@@ -180,5 +180,18 @@
    "-Wextra"
   ],
   "file": "srcs/ft_bmp_save.c"
+ },
+ {
+  "directory": "/home/fenrir/Bureau/git-file/Wolf-3D",
+  "arguments": [
+   "cc",
+   "-o",
+   "srcs/ft_bmp_save.o",
+   "-c",
+   "srcs/ft_bmp_save.c",
+   "-Wall",
+   "-Wextra"
+  ],
+  "file": "srcs/ft_sprite.c"
  }
 ]

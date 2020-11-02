@@ -19,17 +19,23 @@
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
-# define SPRITE_SIZE 0.5
+/*
+** don't use SPRITE_SIZE > 1
+*/
+# define SPRITE_SIZE 1
 # define RUN_SPEED 0.15
-# define WALK_SPEED 0.08
+# define WALK_SPEED 0.04
 # define FAST_ROT_SPEED 0.1
-# define ROTATION_SPEED 0.05
+# define ROTATION_SPEED 0.02
 
-typedef struct		s_lst_map
+typedef struct		s_lst
 {
-	char				*content;
-	struct s_lst_map	*next;
-}					t_lst_map;
+	char			*content;
+	double			x;
+	double			y;
+	double 			dist;
+	struct s_lst	*next;
+}					t_lst;
 
 typedef struct		s_texture
 {
@@ -46,14 +52,14 @@ typedef struct		s_texture
 
 typedef struct		s_sprite
 {
-	t_texture		wall[5];
+	t_texture		wall[6];
 	char			f[3];
 	char			c[3];
 }					t_sprite;
 
 typedef struct		s_map
 {
-	t_lst_map		*ch_map;
+	t_lst			*ch_map;
 	char			**map;
 	char 			dir;
 	unsigned int	map_y;
@@ -88,14 +94,14 @@ typedef struct		s_player
 
 typedef struct		s_ray
 {
-	double			x_ray_position;
-	double			y_ray_position;
-	double			x_ray_direction;
-	double			y_ray_direction;
-	double			x_side_distance;
-	double			y_side_distance;
-	double			x_delta_distance;
-	double			y_delta_distance;
+	double			x_ray_pos;
+	double			y_ray_pos;
+	double			x_ray_dir;
+	double			y_ray_dir;
+	double			x_side_dist;
+	double			y_side_dist;
+	double			x_delta_dist;
+	double			y_delta_dist;
 }					t_ray;
 
 typedef struct		s_win
@@ -115,46 +121,73 @@ typedef struct		s_frame
 	int				side;
 	int				x;
 	int 			item;
-	double			wall_distance;
+	int				sprite;
+	int				secret;
+	double			wall_dist;
 	double			ux;
 }					t_frame;
+
+typedef struct		s_spr
+{
+	double			x;
+	double 			y;
+	double			trs_x;
+	double 			trs_y;
+	double			inv;
+	int				spr_scr_x;
+	int 			spr_h;
+	int 			spr_w;
+	int				drw_start_y;
+	int				drw_start_x;
+	int				drw_end_y;
+	int				drw_end_x;
+}					t_spr;
 
 typedef struct		s_wolf
 {
 	t_win			win;
 	t_map			map;
+	t_spr 			spr_data;
 	t_sprite		sprite;
 	t_player		player;
 	t_ray			ray;
 	t_texture 		image;
 	t_frame			frame;
+	t_lst 			*spr;
 	char			*line;
 	int				fd;
+	int				d;
+	int				tex_y;
 	int				ret;
 	unsigned short	ok;
 	unsigned short	sel;
 }					t_wolf;
 
-void		ft_error(char error, int line, const char *file, const char *function);
-void		ft_init_map(t_wolf *wolf);
-void		ft_fill_res(t_win *win, char *entry, unsigned short *ok);
-void		ft_texture(t_wolf *wolf);
-void		ft_test_pos(t_map *map);
-void		ft_lst_clear(t_lst_map **lst, void (*del)(void*));
-void		ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new);
-t_lst_map	*ft_lst_new(void *content);
-void		ft_init(t_wolf *wolf);
-void		ft_init_tex(t_wolf *wolf);
-void		ft_frame(t_wolf *wolf);
-void		ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf);
-void		ft_wall_detec_init(t_wolf *wolf);
-void		ft_wall_detec(t_wolf *wolf);
-void		choose_texture(t_wolf *wolf);
-void		texture_calc(t_wolf *wolf);
-int			ft_press(int keycode, t_wolf *wolf);
-int			ft_release(int key, t_wolf *wolf);
-int			ft_move(t_wolf *wolf);
-int 		ft_leave(t_wolf *wolf);
-void		ft_bmp(t_wolf *wolf);
+void	ft_error(char error, int line, const char *file, const char *function);
+void	ft_init_map(t_wolf *wolf);
+void	ft_fill_res(t_win *win, char *entry, unsigned short *ok);
+void	ft_texture(t_wolf *wolf);
+void	ft_test_pos(t_map *map);
+void	ft_lst_clear(t_lst **lst, void (*del)(void*));
+void	ft_lst_add_back(t_lst **a_lst, t_lst *new);
+void	ft_lst_add_frt(t_lst **alst, t_lst *new);
+t_lst	*ft_lst_new(void *content);
+int		ft_check_list(t_wolf *wolf);
+void	ft_init(t_wolf *wolf);
+void	ft_init_tex(t_wolf *wolf);
+void	ft_frame(t_wolf *wolf);
+void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf);
+void	ft_draw2(int x, int draw_start, t_wolf *wolf);
+void	ft_draw3(int x, int draw_start, t_wolf *wolf);
+void	ft_wall_detec_init(t_wolf *wolf);
+void	ft_wall_detec(t_wolf *wolf);
+void	choose_texture(t_wolf *wolf);
+void	texture_calc(t_wolf *wolf);
+int		ft_press(int keycode, t_wolf *wolf);
+int		ft_release(int key, t_wolf *wolf);
+int		ft_move(t_wolf *wolf);
+int 	ft_leave(t_wolf *wolf);
+void	ft_bmp(t_wolf *wolf);
+void	ft_sprite(t_wolf *wolf, double *wall_dist_buf);
 
 #endif

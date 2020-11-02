@@ -75,6 +75,11 @@ static void	ft_texture2(t_wolf *wolf)
 		ft_fill_color(wolf->sprite.c, &wolf->line[1]);
 		wolf->ok += 0x040;
 	}
+	else if (wolf->line[0] == 'I' && wolf->frame.secret == 0)
+	{
+		ft_copy_path(&wolf->sprite.wall[5].path, &wolf->line[1]);
+		wolf->frame.secret = 1;
+	}
 	else
 		ft_error(0, __LINE__, __FILE__, __FUNCTION__);
 }

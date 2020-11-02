@@ -12,9 +12,9 @@
 
 #include "../header/wolf.h"
 
-void	ft_lst_clear(t_lst_map **lst, void (*del)(void*))
+void	ft_lst_clear(t_lst **lst, void (*del)(void*))
 {
-	t_lst_map	*elem;
+	t_lst	*elem;
 
 	while (*lst && del)
 	{
@@ -25,9 +25,9 @@ void	ft_lst_clear(t_lst_map **lst, void (*del)(void*))
 	}
 }
 
-void	ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new)
+void	ft_lst_add_back(t_lst **a_lst, t_lst *new)
 {
-	t_lst_map	*last;
+	t_lst	*last;
 
 	if (new && *a_lst)
 	{
@@ -43,13 +43,41 @@ void	ft_lst_add_back(t_lst_map **a_lst, t_lst_map *new)
 	}
 }
 
-t_lst_map	*ft_lst_new(void *content)
+void	ft_lst_add_frt(t_lst **alst, t_lst *new)
 {
-	t_lst_map *str;
+	if (new && *alst)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
+	else if (!(*alst))
+	{
+		*alst = new;
+		new->next = NULL;
+	}
+}
 
-	if (!(str = (t_lst_map *)malloc(sizeof(t_lst_map))))
+t_lst	*ft_lst_new(void *content)
+{
+	t_lst *str;
+
+	if (!(str = (t_lst *)malloc(sizeof(t_lst))))
 		return (NULL);
 	str->content = content;
 	str->next = NULL;
 	return (str);
+}
+
+int		ft_check_list(t_wolf *wolf)
+{
+	t_lst *temp;
+
+	temp = wolf->spr;
+	while(temp)
+	{
+		if (wolf->map.map_x + 0.5 == temp->x && wolf->map.map_y + 0.5 == temp->y)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
 }

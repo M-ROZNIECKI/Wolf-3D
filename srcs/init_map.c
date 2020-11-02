@@ -43,7 +43,7 @@ static void	ft_valid_map(t_map *map)
 static void	ft_fill_tab(t_map *map)
 {
 	unsigned int	i;
-	t_lst_map		*temp;
+	t_lst		*temp;
 
 	i = 0;
 	temp = map->ch_map;
@@ -92,22 +92,27 @@ static void	ft_fill_map(t_wolf *wolf)
 	}
 	wolf->ok += 0x0100;
 	ft_fill_tab(&wolf->map);
+	wolf->frame.secret = 1;
 }
 
 void		ft_init_map(t_wolf *wolf)
 {
+	wolf->frame.secret = 0;
 	while ((wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
-		if ((wolf->line[0] == '1' || wolf->line[0] == '0' || wolf->line[0] == ' ') && wolf->ok == 0x0FF)
+		if ((wolf->line[0] == '1' || wolf->line[0] == '0' ||
+		wolf->line[0] == ' ') && wolf->ok == 0x0FF)
 			ft_fill_map(wolf);
-		else if ((wolf->line[0] == 'N' || wolf->line[0] == 'S' ||
-				wolf->line[0] == 'F' || wolf->line[0] == 'W' ||
-				wolf->line[0] == 'E' || wolf->line[0] == 'C') && wolf->ok < 0x0FF)
+		else if (((wolf->line[0] == 'N' || wolf->line[0] == 'S' ||\
+		wolf->line[0] == 'F' || wolf->line[0] == 'W' || wolf->line[0] == 'E' ||\
+		wolf->line[0] == 'C') && wolf->ok < 0x0FF) || (wolf->line[0] == 'I' &&
+		wolf->frame.secret == 0))
 			ft_texture(wolf);
 		else if (wolf->line[0] == 'R' && wolf->ok < 0x0FF && (wolf->ok & (unsigned)0x080) == 0)
 			ft_fill_res(&wolf->win, &wolf->line[1], &wolf->ok);
 		else if (wolf->line[0] != '\0')
 		{
+			ft_printf("\nHello %c \n", wolf->line[0]);
 			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 		}
