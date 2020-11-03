@@ -19,7 +19,9 @@
 ** -1	: error processing .map file
 ** 0	: an element in .cub file was set more than one times
 ** 1	: bad format
-** TODO 2	: sprite not in xmp or png
+** TODO 2	: sprite not in xmp format
+** mlx_destroy_window(wolf->win.my_mlx, wolf->win.win);
+** ft_leave()
 */
 
 static void	ft_one_valid_format(void)
@@ -63,5 +65,8 @@ void		ft_error(char error, int line, const char *file, const char *func)
 				" information needed and finish by a closed map");
 		ft_one_valid_format();
 	}
+	else if (error == 2)
+		ft_printf("you need to call the program with a .cub file"
+			"and can add a flag --save after the .cub file");
 	exit(0);
 }

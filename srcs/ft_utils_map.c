@@ -15,10 +15,7 @@
 void	ft_test_pos(t_map *map)
 {
 	static unsigned int i = 0;
-	if (map->map[map->temp_y][map->temp_x] == 'N' ||
-		map->map[map->temp_y][map->temp_x] == 'S' ||
-		map->map[map->temp_y][map->temp_x] == 'E' ||
-		map->map[map->temp_y][map->temp_x] == 'W')
+	if (map->map[map->temp_y][map->temp_x] != '0')
 	{
 		map->start_x = map->temp_x;
 		map->start_y = map->temp_y;
