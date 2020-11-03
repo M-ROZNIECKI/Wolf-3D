@@ -27,8 +27,9 @@ void	ft_draw2(int x, int draw_start, t_wolf *wolf)
 {
 	wolf->d = draw_start * 256 - wolf->win.res_y * 128 +\
 	wolf->frame.line_height * 128;
-	wolf->tex_y = ((wolf->d * wolf->sprite.wall[wolf->sel].y) /\
-	wolf->frame.line_height) / 256;
+	wolf->tex_y = (int)((((long int)(wolf->d) *\
+	(long int)(wolf->sprite.wall[wolf->sel].y)) /\
+	(long int)(wolf->frame.line_height)) / (long int)(256));
 	if (\
 	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
     * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 2] != 0) ||\

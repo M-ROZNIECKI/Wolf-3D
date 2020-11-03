@@ -13,8 +13,9 @@
 NAME = Wolf-3D
 
 ifeq ($(shell uname), Linux)
-TARGET = ft_printf/linux/libftprintf.a -I minilibx -L minilibx -lmlx -lXext -lX11 -lm
-FLAGS = -Wall -Wextra
+TARGET = ft_printf/linux/libftprintf.a -I minilibx -L minilibx -lmlx -lXext\
+		-lX11 -lm
+FLAGS = -Wall -Wextra -g -O3
 else
 TARGET = ft_printf/mac/libftprintf.a -I minilibx -L minilibx -lmlx
 FLAGS = -Wall -Wextra

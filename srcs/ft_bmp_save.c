@@ -3,9 +3,6 @@
 //
 
 #include "../header/wolf.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 
 static void	ft_fill_data(int fd, t_wolf *wolf)
 {
@@ -31,7 +28,8 @@ static void	ft_fill_data(int fd, t_wolf *wolf)
 			data[x + 2] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 2];
 			x += 3;
 		}
-		write(fd, data, sizeline);
+		if (write(fd, data, sizeline) == -1)
+			ft_error(10, __LINE__, __FILE__, __FUNCTION__);
 	}
 	free(data);
 }
@@ -56,7 +54,8 @@ static void	ft_fill_header(int fd, t_wolf *wolf)
 	header[0x019] = (wolf->win.res_y >> 24) & 0x000000FF;
 	header[0x01A] = 0x01;
 	header[0x01C] = 0x18;
-	write(fd, header, 54);
+	if (write(fd, header, 54) == -1)
+		ft_error(10, __LINE__, __FILE__, __FUNCTION__);
 	free(header);
 }
 

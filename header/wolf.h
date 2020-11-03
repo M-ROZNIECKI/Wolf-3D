@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <math.h>
 # include <mlx.h>
+# include <fcntl.h>
 
 # define RES_X_MAX 2560
 # define RES_Y_MAX 1440
