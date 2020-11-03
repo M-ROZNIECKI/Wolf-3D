@@ -17,9 +17,6 @@
 # include <math.h>
 # include <mlx.h>
 # include <fcntl.h>
-
-# define RES_X_MAX 2560
-# define RES_Y_MAX 1440
 /*
 ** don't use SPRITE_SIZE > 1
 */
@@ -107,6 +104,8 @@ typedef struct		s_ray
 
 typedef struct		s_win
 {
+	int 			res_x_max;
+	int				res_y_max;
 	int 			res_x;
 	int				res_y;
 	void			*my_mlx;
@@ -160,6 +159,7 @@ typedef struct		s_wolf
 	int				d;
 	int				tex_y;
 	int				ret;
+	int				mov_dwn;
 	unsigned short	ok;
 	unsigned short	sel;
 }					t_wolf;

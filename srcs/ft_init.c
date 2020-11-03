@@ -15,6 +15,12 @@
 void	ft_init_w(t_win *win)
 {
 	win->my_mlx = mlx_init();
+	mlx_get_screen_size(win->my_mlx, &win->res_x_max, &win->res_y_max);
+	ft_printf("x=%d, y=%d\n", win->res_x_max, win->res_y_max);
+	if (win->res_x > win->res_x_max)
+		win->res_x = win->res_x_max;
+	if (win->res_y > win->res_y_max)
+		win->res_y = win->res_y_max;
 	win->win = mlx_new_window(win->my_mlx, win->res_x, win->res_y, win->name);
 }
 

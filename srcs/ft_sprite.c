@@ -40,8 +40,8 @@ void	ft_spr_drw(t_wolf *wolf, const double *wall_dist_buf, int stripe)
 	wolf->win.res_x && stripe > 0 && wolf->spr_data.trs_y > 0)
 		while(++y < wolf->spr_data.drw_end_y)
 		{
-			wolf->d = y * 256 - wolf->win.res_y * 128 + wolf->spr_data.spr_h *\
-			128;
+			wolf->d = (y - wolf->mov_dwn) * 256 - wolf->win.res_y * 128 +\
+			wolf->spr_data.spr_h * 128;
 			wolf->tex_y = (int)((((long int)(wolf->d) *\
 			(long int)(wolf->sprite.wall[wolf->sel].y)) /\
 			(long int)(wolf->spr_data.spr_h)) / 256);
@@ -61,17 +61,16 @@ void	ft_spr_calc_2(t_wolf *wolf, double *wall_dist_buf)
 {
 	int	stripe;
 
-	wolf->spr_data.drw_end_y = (wolf->win.res_y + wolf->spr_data.spr_h) / 2;
 	if (wolf->spr_data.drw_end_y >= wolf->win.res_y)
 		wolf->spr_data.drw_end_y = wolf->win.res_y - 1;
-	wolf->spr_data.spr_w = abs((int)(wolf->win.res_y / wolf->spr_data.trs_y));
+	wolf->spr_data.spr_w = abs((int)(wolf->win.res_y / wolf->spr_data.trs_y)) *\
+	SPRITE_SIZE;
 	wolf->spr_data.drw_start_x = wolf->spr_data.spr_scr_x -\
 	wolf->spr_data.spr_w / 2;
 	wolf->spr_data.drw_end_x = wolf->spr_data.spr_scr_x +\
 	wolf->spr_data.spr_w / 2;
 	if (wolf->spr_data.drw_end_x >= wolf->win.res_x)
 		wolf->spr_data.drw_end_x = wolf->win.res_x - 1;
-
 	stripe = wolf->spr_data.drw_start_x - 1;
 	if (stripe < -1)
 		stripe = -1;
@@ -95,14 +94,19 @@ void	ft_spr_calc(t_wolf *wolf, t_lst *spr, double *wall_dist_buf)
 	wolf->player.x_dir * wolf->spr_data.y);
 	wolf->spr_data.trs_y = wolf->spr_data.inv * (wolf->player.x_plane\
 	* wolf->spr_data.y - wolf->player.y_plane * wolf->spr_data.x);
+	wolf->mov_dwn = (int)(wolf->win.res_y * (1 - SPRITE_SIZE) / (2 *\
+	wolf->spr_data.trs_y));
 	wolf->spr_data.spr_scr_x = (int)((wolf->win.res_x / 2) * (1 +\
 	wolf->spr_data.trs_x / wolf->spr_data.trs_y));
 	wolf->spr_data.spr_h = abs((int)(wolf->win.res_y /\
-	wolf->spr_data.trs_y));
-	wolf->spr_data.drw_start_y = (wolf->win.res_y - wolf->spr_data.spr_h) / 2;
+	wolf->spr_data.trs_y)) * SPRITE_SIZE;
+	wolf->spr_data.drw_start_y = (wolf->win.res_y - wolf->spr_data.spr_h) / 2\
+	 + wolf->mov_dwn;
 	if (wolf->spr_data.drw_start_y < 0)
 		wolf->spr_data.drw_start_y = 0;
-	ft_spr_calc_2(wolf, wall_dist_buf);
+    wolf->spr_data.drw_end_y = (wolf->win.res_y + wolf->spr_data.spr_h) / 2\
+    + wolf->mov_dwn;
+    ft_spr_calc_2(wolf, wall_dist_buf);
 }
 
 void	ft_sprite(t_wolf *wolf, double *wall_dist_buf)
