@@ -61,6 +61,29 @@ static void	ft_fill_tab(t_map *map)
 	ft_valid_map(map);
 }
 
+static void	ft_fill_map_bis(unsigned int temp, t_wolf *wolf)
+{
+	if (wolf->line[0] == '1' || wolf->line[0] == ' ')
+	{
+		ft_lst_add_back(&wolf->map.ch_map, ft_lst_new(ft_strdup(wolf->line)));
+		wolf->map.map_y++;
+		if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
+			wolf->map.map_x = temp;
+	}
+	else if (wolf->line[0] != '\0')
+	{
+		free(wolf->line);
+		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+	}
+	else
+	{
+		free(wolf->line);
+		ft_fill_tab(&wolf->map);
+		return;
+	}
+	free(wolf->line);
+}
+
 static void	ft_fill_map(t_wolf *wolf)
 {
 	unsigned int	temp;
@@ -68,28 +91,9 @@ static void	ft_fill_map(t_wolf *wolf)
 	wolf->map.ch_map = ft_lst_new(ft_strdup(wolf->line));
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
+	free(wolf->line);
 	while ((get_next_line(wolf->fd, &wolf->line)) == 1)
-	{
-		if (wolf->line[0] == '1' || wolf->line[0] == ' ')
-		{
-			ft_lst_add_back(&wolf->map.ch_map, ft_lst_new(ft_strdup(wolf->line)));
-			wolf->map.map_y++;
-			if ((temp = ft_strlen(wolf->line)) > wolf->map.map_x)
-				wolf->map.map_x = temp;
-		}
-		else if (wolf->line[0] != '\0')
-		{
-			free(wolf->line);
-			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
-		}
-		else
-		{
-			free(wolf->line);
-			ft_fill_tab(&wolf->map);
-			return;
-		}
-		free(wolf->line);
-	}
+		ft_fill_map_bis(temp, wolf);
 	wolf->ok += 0x0100;
 	ft_fill_tab(&wolf->map);
 	wolf->frame.secret = 1;
@@ -97,7 +101,6 @@ static void	ft_fill_map(t_wolf *wolf)
 
 void		ft_init_map(t_wolf *wolf)
 {
-	wolf->frame.secret = 0;
 	while ((wolf->ret = get_next_line(wolf->fd, &wolf->line)) == 1)
 	{
 		if ((wolf->line[0] == '1' || wolf->line[0] == '0' ||
@@ -108,17 +111,15 @@ void		ft_init_map(t_wolf *wolf)
 		wolf->line[0] == 'C') && wolf->ok < 0x0FF) || (wolf->line[0] == 'I' &&
 		wolf->frame.secret == 0))
 			ft_texture(wolf);
-		else if (wolf->line[0] == 'R' && wolf->ok < 0x0FF && (wolf->ok & (unsigned)0x080) == 0)
+		else if (wolf->line[0] == 'R' && wolf->ok < 0x0FF && (wolf->ok &\
+		(unsigned)(0x080)) == 0)
 			ft_fill_res(&wolf->win, &wolf->line[1], &wolf->ok);
 		else if (wolf->line[0] != '\0')
 		{
-			ft_printf("\nHello %c \n", wolf->line[0]);
 			free(wolf->line);
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 		}
-		if (wolf->ok != 0xFF)
-			free(wolf->line);
+		free(wolf->line);
 	}
-	if (wolf->ret == -1)
-		ft_error(-1, __LINE__, __FILE__, __FUNCTION__);
+	free(wolf->line);
 }

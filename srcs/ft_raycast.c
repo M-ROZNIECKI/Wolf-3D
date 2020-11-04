@@ -24,10 +24,10 @@ void	ft_ray_init(t_wolf *wolf, int x)
 	ft_wall_detec(wolf);
 	if (wolf->frame.side == 0)
 		wolf->frame.wall_dist = (wolf->map.map_x - wolf->ray.x_ray_pos\
-		+ (1 - wolf->map.check_x) / 2) / wolf->ray.x_ray_dir;
+		+ (double)(1 - wolf->map.check_x) / 2) / wolf->ray.x_ray_dir;
 	else
 		wolf->frame.wall_dist = (wolf->map.map_y - wolf->ray.y_ray_pos\
-		+ (1 - wolf->map.check_y) / 2) / wolf->ray.y_ray_dir;
+		+ (double)(1 - wolf->map.check_y) / 2) / wolf->ray.y_ray_dir;
 }
 
 void	ft_create_img(t_wolf *wolf)
@@ -42,8 +42,6 @@ void	ft_raycast(t_wolf *wolf)
 {
 	double wall_dist_buf[wolf->win.res_x];
 
-	wolf->frame.x = -1;
-	wolf->frame.sprite = 0;
 	while (++wolf->frame.x < wolf->win.res_x)
 	{
 		ft_ray_init(wolf, wolf->frame.x);
@@ -58,10 +56,10 @@ void	ft_raycast(t_wolf *wolf)
 			wolf->frame.draw_end = wolf->win.res_y - 1;
 		choose_texture(wolf);
 		texture_calc(wolf);
-		ft_draw(wolf->frame.x, wolf->frame.draw_start, wolf->frame.draw_end, wolf);
+		ft_draw(wolf->frame.x, wolf->frame.draw_start, wolf->frame.draw_end,\
+		wolf);
 		wall_dist_buf[wolf->frame.x] = wolf->frame.wall_dist;
 	}
-	//ft_printf("\nhello\n");
 	if (wolf->frame.sprite != 0)
 		ft_sprite(wolf, wall_dist_buf);
 }
@@ -69,6 +67,8 @@ void	ft_raycast(t_wolf *wolf)
 void	ft_frame(t_wolf *wolf)
 {
 	ft_create_img(wolf);
+	wolf->frame.x = -1;
+	wolf->frame.sprite = 0;
 	ft_raycast(wolf);
 	mlx_put_image_to_window(wolf->win.my_mlx, wolf->win.win,\
 		wolf->image.img, 0, 0);

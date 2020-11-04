@@ -4,16 +4,19 @@
 
 #include "../header/wolf.h"
 
-static void	ft_fill_data(int fd, t_wolf *wolf)
+static void	ft_f_data2(int x, int y, char *data, t_wolf *wolf)
+{
+	data[x] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y];
+	data[x + 1] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 1];
+	data[x + 2] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 2];
+}
+
+static void	ft_fill_data(int fd, int sizeline, t_wolf *wolf)
 {
 	char	*data;
 	int		x;
 	int		y;
-	int		sizeline;
 
-	sizeline = (3 * wolf->win.res_x);
-	if ((sizeline % 4) != 0)
-		sizeline += 4 - (sizeline % 4);
 	y = wolf->win.res_y;
 	if (!(data = malloc(sizeof(char) * sizeline)))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
@@ -23,15 +26,15 @@ static void	ft_fill_data(int fd, t_wolf *wolf)
 		ft_memset(data, 0, sizeline);
 		while (x < (wolf->win.res_x) * 3)
 		{
-			data[x] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y];
-			data[x + 1] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 1];
-			data[x + 2] = wolf->image.data[(x / 3) * 4 + 4 * wolf->win.res_x * y + 2];
+			ft_f_data2(x, y, data, wolf);
 			x += 3;
 		}
 		if (write(fd, data, sizeline) == -1)
-			ft_error(10, __LINE__, __FILE__, __FUNCTION__);
+			y = -10;
 	}
 	free(data);
+	if (y != -1)
+		ft_error(10, __LINE__, __FILE__, __FUNCTION__);
 }
 
 static void	ft_fill_header(int fd, t_wolf *wolf)
@@ -62,9 +65,13 @@ static void	ft_fill_header(int fd, t_wolf *wolf)
 void		ft_bmp(t_wolf *wolf)
 {
 	int fd;
+	int		sizeline;
 
 	fd = open("save.bmp", O_CREAT | O_WRONLY, 0777);
 	ft_fill_header(fd, wolf);
-	ft_fill_data(fd, wolf);
+	sizeline = (3 * wolf->win.res_x);
+	if ((sizeline % 4) != 0)
+		sizeline += 4 - (sizeline % 4);
+	ft_fill_data(fd, sizeline, wolf);
 	close(fd);
 }

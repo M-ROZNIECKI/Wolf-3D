@@ -182,6 +182,7 @@ void	ft_draw2(int x, int draw_start, t_wolf *wolf);
 void	ft_draw3(int x, int draw_start, t_wolf *wolf);
 void	ft_wall_detec_init(t_wolf *wolf);
 void	ft_wall_detec(t_wolf *wolf);
+int 	ft_add_sprite2(t_wolf *wolf);
 void	choose_texture(t_wolf *wolf);
 void	texture_calc(t_wolf *wolf);
 int		ft_press(int keycode, t_wolf *wolf);

@@ -77,10 +77,17 @@ int 		ft_leave(t_wolf *wolf)
 	int i;
 
 	i = -1;
+	mlx_destroy_image(wolf->win.my_mlx, wolf->image.img);
 	while(wolf->map.map[++i])
 		free(wolf->map.map[i]);
+	i = 5;
+	if (wolf->frame.secret == 1)
+		i = 6;
+	while (--i >= 0)
+		mlx_destroy_image(wolf->win.my_mlx, wolf->sprite.wall[i].img);
 	free(wolf->map.map);
 	free(wolf->win.name);
+	free(wolf->win.my_mlx);
 	free(wolf);
 	exit(0);
 }

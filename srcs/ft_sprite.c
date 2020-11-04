@@ -8,7 +8,6 @@ void	ft_sort_lst(t_wolf *wolf)
 {
 	t_lst			*tmp;
 	double			x;
-	double			y;
 
 	tmp = wolf->spr;
 	while (tmp->next)
@@ -21,9 +20,9 @@ void	ft_sort_lst(t_wolf *wolf)
 			x = tmp->y;
 			tmp->y = tmp->next->y;
 			tmp->next->y = x;
-			y = tmp->dist;
+			x = tmp->dist;
 			tmp->dist = tmp->next->dist;
-			tmp->next->dist = y;
+			tmp->next->dist = x;
 			tmp = wolf->spr;
 		}
 		else

@@ -16,13 +16,21 @@ void	ft_lst_clear(t_lst **lst, void (*del)(void*))
 {
 	t_lst	*elem;
 
-	while (*lst && del)
-	{
-		elem = *lst;
-		*lst = elem->next;
-		del(elem->content);
-		free(elem);
-	}
+	if (del)
+		while (*lst)
+		{
+			elem = *lst;
+			*lst = elem->next;
+			del(elem->content);
+			free(elem);
+		}
+	else
+		while (*lst)
+		{
+			elem = *lst;
+			*lst = elem->next;
+			free(elem);
+		}
 }
 
 void	ft_lst_add_back(t_lst **a_lst, t_lst *new)
@@ -75,7 +83,8 @@ int		ft_check_list(t_wolf *wolf)
 	temp = wolf->spr;
 	while(temp)
 	{
-		if (wolf->map.map_x + 0.5 == temp->x && wolf->map.map_y + 0.5 == temp->y)
+		if (wolf->map.map_x + 0.5 == temp->x &&\
+		wolf->map.map_y + 0.5 == temp->y)
 			return (0);
 		temp = temp->next;
 	}

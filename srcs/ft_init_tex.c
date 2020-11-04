@@ -33,6 +33,7 @@ void	ft_init_tex(t_wolf *wolf)
 		wolf->sprite.wall[n].data = mlx_get_data_addr(wolf->sprite.wall[n].img,\
 			&wolf->sprite.wall[n].bpp, &wolf->sprite.wall[n].sizeline, \
 			&wolf->sprite.wall[n].endian);
+		free(wolf->sprite.wall[n].path);
 	}
 }
 

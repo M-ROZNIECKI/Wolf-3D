@@ -40,12 +40,9 @@ void	ft_draw2(int x, int draw_start, t_wolf *wolf)
 		ft_draw3(x, draw_start, wolf);
 }
 
-void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf)
+static void ft_drw_c_f(int x, int y, t_wolf *wolf)
 {
-	int		y;
-
-	y = -1;
-	while (++y <= draw_start)
+	while (++y <= wolf->win.res_y / 2)
 	{
 		wolf->image.data[x * 4 + 4 * wolf->win.res_x * y] = wolf->sprite.c[2];
 		wolf->image.data[x * 4 + 4 * wolf->win.res_x * y + 1] =\
@@ -54,9 +51,7 @@ void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf)
 			wolf->sprite.c[0];
 		wolf->image.data[x * 4 + 4 * wolf->win.res_x * y + 3] = 0;
 	}
-	while (++draw_start <= draw_end)
-		ft_draw2(x, draw_start, wolf);
-	y = draw_start - 5;
+	y--;
 	while (++y < wolf->win.res_y)
 	{
 		wolf->image.data[x * 4 + 4 * wolf->win.res_x * y] = wolf->sprite.f[2];
@@ -66,4 +61,14 @@ void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf)
 			wolf->sprite.f[0];
 		wolf->image.data[x * 4 + 4 * wolf->win.res_x * y + 3] = 0;
 	}
+}
+
+void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf)
+{
+	int		y;
+
+	y = -1;
+	ft_drw_c_f(x, y, wolf);
+	while (++draw_start <= draw_end)
+		ft_draw2(x, draw_start, wolf);
 }

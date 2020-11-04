@@ -36,19 +36,19 @@ static void	ft_fill_color(char color[3], char *entry)
 	i = 0;
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
-	color[0] = ft_atoi(&entry[i]);
+	color[0] = (char)ft_atoi(&entry[i]);
 	while (entry[i] && entry[i] != ',')
 		i++;
 	i++;
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
-	color[1] = ft_atoi(&entry[i]);
+	color[1] = (char)ft_atoi(&entry[i]);
 	while (entry[i] && entry[i] != ',')
 		i++;
 	i++;
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
-	color[2] = ft_atoi(&entry[i]);
+	color[2] = (char)ft_atoi(&entry[i]);
 }
 
 static void	ft_texture2(t_wolf *wolf)
@@ -79,7 +79,7 @@ static void	ft_texture2(t_wolf *wolf)
 
 void		ft_texture(t_wolf *wolf)
 {
-	if (wolf->line[0] == 'S' && wolf->line[1] == 'O' && (wolf->ok & (unsigned)0x01) == 0)
+	if (wolf->line[0] == 'S' && wolf->line[1] == 'O' && (wolf->ok & 0x01) == 0)
 	{
 		ft_copy_path(&wolf->sprite.wall[1].path, &wolf->line[2]);
 		wolf->ok += 0x01;
@@ -112,11 +112,7 @@ void		ft_fill_res(t_win *win, char *entry, unsigned short *ok)
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
 	win->res_x = ft_atoi(&entry[i]);
-	if (win->res_x > RES_X_MAX)
-		win->res_x = RES_X_MAX;
 	while (((entry[i] >= 13 && entry[i] != 32) || entry[i] <= 9) && entry[i])
 		i++;
 	win->res_y = ft_atoi(&entry[i]);
-	if (win->res_y > RES_Y_MAX)
-		win->res_y = RES_Y_MAX;
 }

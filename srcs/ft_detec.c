@@ -4,7 +4,7 @@
 
 #include "../header/wolf.h"
 
-void	ft_wall_detec_init_y(t_wolf *wolf)
+static void	ft_wall_detec_init_y(t_wolf *wolf)
 {
 	wolf->ray.y_delta_dist = sqrt(1 + (wolf->ray.x_ray_dir *\
 		wolf->ray.x_ray_dir) / (wolf->ray.y_ray_dir * wolf->ray.y_ray_dir));
@@ -22,7 +22,7 @@ void	ft_wall_detec_init_y(t_wolf *wolf)
 	}
 }
 
-void	ft_wall_detec_init(t_wolf *wolf)
+void		ft_wall_detec_init(t_wolf *wolf)
 {
 	wolf->frame.item = 0;
 	wolf->ray.x_delta_dist = sqrt(1 + (wolf->ray.y_ray_dir *\
@@ -42,7 +42,7 @@ void	ft_wall_detec_init(t_wolf *wolf)
 	ft_wall_detec_init_y(wolf);
 }
 
-void	ft_ray_mov(t_wolf *wolf)
+static void	ft_ray_mov(t_wolf *wolf)
 {
 	if (wolf->ray.x_side_dist < wolf->ray.y_side_dist)
 	{
@@ -58,20 +58,14 @@ void	ft_ray_mov(t_wolf *wolf)
 	}
 }
 
-int 	ft_add_sprite(t_wolf *wolf)
+static int	ft_add_sprite(t_wolf *wolf)
 {
 	t_lst	*new;
 
 	if (wolf->frame.sprite == 0)
 	{
-		if (!(wolf->spr = (t_lst *)malloc(sizeof(t_lst))))
+		if (ft_add_sprite2(wolf) == 0)
 			return 0;
-		wolf->spr->x = wolf->map.map_x + 0.5;
-		wolf->spr->y = wolf->map.map_y + 0.5;
-		wolf->spr->dist = pow(wolf->player.x_pos - wolf->spr->x, 2) +\
-			pow(wolf->player.y_pos - wolf->spr->y, 2);
-		wolf->spr->next = NULL;
-		wolf->frame.sprite = 2;
 	}
 	else
 		if (ft_check_list(wolf) == 1)
@@ -102,6 +96,9 @@ void	ft_wall_detec(t_wolf *wolf)
 		}
 		if (wolf->map.map[wolf->map.map_y][wolf->map.map_x] == '2')
 			if (ft_add_sprite(wolf) == 0)
+			{
+				ft_lst_clear(&wolf->spr, NULL);
 				ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
+			}
 	}
 }

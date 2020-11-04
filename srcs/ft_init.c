@@ -16,7 +16,6 @@ void	ft_init_w(t_win *win)
 {
 	win->my_mlx = mlx_init();
 	mlx_get_screen_size(win->my_mlx, &win->res_x_max, &win->res_y_max);
-	ft_printf("x=%d, y=%d\n", win->res_x_max, win->res_y_max);
 	if (win->res_x > win->res_x_max)
 		win->res_x = win->res_x_max;
 	if (win->res_y > win->res_y_max)
@@ -26,12 +25,6 @@ void	ft_init_w(t_win *win)
 
 void 	ft_init_player(t_wolf *wolf)
 {
-	wolf->player.x_pos = wolf->map.start_x + 0.5;
-	wolf->player.y_pos = wolf->map.start_y + 0.5;
-	wolf->player.x_dir = 0;
-	wolf->player.y_dir = 0;
-	wolf->player.x_plane = 0;
-	wolf->player.y_plane = 0;
 	if (wolf->map.dir == 'N')
 	{
 		wolf->player.y_dir = -1;
@@ -52,19 +45,28 @@ void 	ft_init_player(t_wolf *wolf)
 		wolf->player.x_dir = -1;
 		wolf->player.y_plane = -0.66;
 	}
+}
+
+void	ft_init(t_wolf *wolf)
+{
+	wolf->frame.secret = 0;
+	ft_init_map(wolf);
+	if (wolf->ret == -1)
+		ft_error(-1, __LINE__, __FILE__, __FUNCTION__);
+	ft_init_w(&wolf->win);
+	ft_init_tex(wolf);
+	wolf->player.x_pos = wolf->map.start_x + 0.5;
+	wolf->player.y_pos = wolf->map.start_y + 0.5;
+	wolf->player.x_dir = 0;
+	wolf->player.y_dir = 0;
+	wolf->player.x_plane = 0;
+	wolf->player.y_plane = 0;
 	wolf->player.turn_left = 0;
 	wolf->player.turn_right = 0;
 	wolf->player.forward = 0;
 	wolf->player.backward = 0;
 	wolf->player.turn_rate = ROTATION_SPEED;
 	wolf->player.move_speed = WALK_SPEED;
-}
-
-void	ft_init(t_wolf *wolf)
-{
-	ft_init_map(wolf);
-	ft_init_w(&wolf->win);
-	ft_init_tex(wolf);
 	ft_init_player(wolf);
 	ft_frame(wolf);
 }
