@@ -106,6 +106,7 @@ void	ft_wall_detec(t_wolf *wolf)
 			if (ft_add_sprite(wolf) == 0)
 			{
 				ft_lst_clear(&wolf->spr, NULL);
+				ft_free_sel(wolf, 3);
 				ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 			}
 	}

@@ -35,6 +35,7 @@ SRC =	srcs/ft_error.c\
 		srcs/ft_move.c\
 		srcs/ft_bmp_save.c\
 		srcs/ft_sprite.c\
+		srcs/ft_free.c\
 		srcs/main.c
 
 HEADER =	header/$(wildcard *.h)

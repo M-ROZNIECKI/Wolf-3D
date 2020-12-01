@@ -103,11 +103,11 @@ void		ft_texture(t_wolf *wolf)
 		ft_texture2(wolf);
 }
 
-void		ft_fill_res(t_win *win, char *entry, unsigned short *ok)
+void		ft_fill_res(t_win *win, char *entry, unsigned short *ok, t_wolf *wolf)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	*ok += 0x080;
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
@@ -115,4 +115,10 @@ void		ft_fill_res(t_win *win, char *entry, unsigned short *ok)
 	while (((entry[i] >= 13 && entry[i] != 32) || entry[i] <= 9) && entry[i])
 		i++;
 	win->res_y = ft_atoi(&entry[i]);
+	if (win->res_y < 0 || win->res_x < 0)
+	{
+		ft_free(entry);
+		ft_free_sel(wolf, 0);
+		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+	}
 }

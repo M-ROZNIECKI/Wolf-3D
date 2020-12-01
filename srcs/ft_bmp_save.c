@@ -27,7 +27,8 @@ static void	ft_fill_data(int fd, int sizeline, t_wolf *wolf)
 
 	y = wolf->win.res_y;
 	if (!(data = malloc(sizeof(char) * sizeline)))
-		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
+		if (ft_free_sel(wolf, 3))
+			ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	while (--y >= 0)
 	{
 		x = 0;
@@ -40,9 +41,7 @@ static void	ft_fill_data(int fd, int sizeline, t_wolf *wolf)
 		if (write(fd, data, sizeline) == -1)
 			y = -10;
 	}
-	free(data);
-	if (y != -1)
-		ft_error(10, __LINE__, __FILE__, __FUNCTION__);
+	ft_free(data);
 }
 
 static void	ft_fill_header(int fd, t_wolf *wolf)
@@ -50,7 +49,8 @@ static void	ft_fill_header(int fd, t_wolf *wolf)
 	char	*header;
 
 	if (!(header = ft_calloc(sizeof(char), 55)))
-		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
+		if (ft_free_sel(wolf, 3))
+			ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	header[0] = 0x42;
 	header[1] = 0x4D;
 	header[0x0A] = 0x36;
@@ -66,8 +66,9 @@ static void	ft_fill_header(int fd, t_wolf *wolf)
 	header[0x01A] = 0x01;
 	header[0x01C] = 0x18;
 	if (write(fd, header, 54) == -1)
-		ft_error(10, __LINE__, __FILE__, __FUNCTION__);
-	free(header);
+		if (ft_free_sel(wolf, 3))
+			ft_error(10, __LINE__, __FILE__, __FUNCTION__);
+	ft_free(header);
 }
 
 void		ft_bmp(t_wolf *wolf)

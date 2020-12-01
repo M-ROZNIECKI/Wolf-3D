@@ -16,10 +16,9 @@
 /*
 ** code error:
 ** -2	: malloc fail
-** -1	: error processing .map file
 ** 0	: an element in .cub file was set more than one times
 ** 1	: bad format
-** TODO 2	: sprite not in xmp format
+** 2	: sprite not in xmp format
 ** mlx_destroy_window(wolf->win.my_mlx, wolf->win.win);
 ** ft_leave()
 */
@@ -54,10 +53,7 @@ void		ft_error(char error, int line, const char *file, const char *func)
 		ft_error_duplic_elem();
 	else if (error == -2)
 		ft_printf("malloc failed");
-	else if (error == -1)
-		ft_printf("failure in processing .cub file, %s",
-		"check if you give us a valid file\n");
-	else if (error == 1)
+	else if (error == 1 || error == -1)
 	{
 		ft_printf("%s%s%s%s", "bad format inside the .cub file\n",
 				"use one of the already made .cub file or",
@@ -66,7 +62,6 @@ void		ft_error(char error, int line, const char *file, const char *func)
 		ft_one_valid_format();
 	}
 	else if (error == 2)
-		ft_printf("you need to call the program with a .cub file"
-			"and can add a flag --save after the .cub file");
+		ft_printf("sprite not in xpm format");
 	exit(0);
 }

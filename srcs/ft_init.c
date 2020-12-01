@@ -52,7 +52,8 @@ void	ft_init(t_wolf *wolf)
 	wolf->frame.secret = 0;
 	ft_init_map(wolf);
 	if (wolf->ret == -1)
-		ft_error(-1, __LINE__, __FILE__, __FUNCTION__);
+		if (ft_free_sel(wolf, 0))
+			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	ft_init_w(&wolf->win);
 	ft_init_tex(wolf);
 	wolf->player.x_pos = wolf->map.start_x + 0.5;

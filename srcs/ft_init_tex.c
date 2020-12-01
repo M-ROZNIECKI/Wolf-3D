@@ -29,11 +29,12 @@ void	ft_init_tex(t_wolf *wolf)
 			wolf->sprite.wall[n].path, &wolf->sprite.wall[n].x, \
 			&wolf->sprite.wall[n].y);
 		else
-			ft_error(2, __LINE__, __FILE__, __FUNCTION__);
+			if (ft_free_tex(wolf, n))
+				ft_error(2, __LINE__, __FILE__, __FUNCTION__);
 		wolf->sprite.wall[n].data = mlx_get_data_addr(wolf->sprite.wall[n].img,\
 			&wolf->sprite.wall[n].bpp, &wolf->sprite.wall[n].sizeline, \
 			&wolf->sprite.wall[n].endian);
-		free(wolf->sprite.wall[n].path);
+		ft_free(wolf->sprite.wall[n].path);
 	}
 }
 

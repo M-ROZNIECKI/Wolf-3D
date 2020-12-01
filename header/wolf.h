@@ -166,9 +166,9 @@ typedef struct		s_wolf
 
 void	ft_error(char error, int line, const char *file, const char *function);
 void	ft_init_map(t_wolf *wolf);
-void	ft_fill_res(t_win *win, char *entry, unsigned short *ok);
+void	ft_fill_res(t_win *win, char *entry, unsigned short *ok, t_wolf *wolf);
 void	ft_texture(t_wolf *wolf);
-void	ft_test_pos(t_map *map);
+int		ft_test_pos(t_map *map);
 void	ft_lst_clear(t_lst **lst, void (*del)(void*));
 void	ft_lst_add_back(t_lst **a_lst, t_lst *new);
 void	ft_lst_add_frt(t_lst **alst, t_lst *new);
@@ -191,5 +191,8 @@ int		ft_move(t_wolf *wolf);
 int 	ft_leave(t_wolf *wolf);
 void	ft_bmp(t_wolf *wolf);
 void	ft_sprite(t_wolf *wolf, double *wall_dist_buf);
+void 	ft_free(void *x);
+int 	ft_free_sel(t_wolf *wolf, int code);
+int 	ft_free_tex(t_wolf *wolf, int n);
 
 #endif

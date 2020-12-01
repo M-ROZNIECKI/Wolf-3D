@@ -12,13 +12,15 @@
 
 #include "../header/wolf.h"
 
-void	ft_test_pos(t_map *map)
+int	ft_test_pos(t_map *map)
 {
 	static unsigned int i = 0;
-	if (map->map[map->temp_y][map->temp_x] != '0')
+	if ((map->map[map->temp_y][map->temp_x] < '0') ||
+	(map->map[map->temp_y][map->temp_x] > '3'))
 	{
 		map->start_x = map->temp_x;
 		map->start_y = map->temp_y;
+		map->dir = map->map[map->temp_y][map->temp_x];
 		i++;
 	}
 	if (map->temp_y == 0 || map->temp_x == 0 ||
@@ -32,7 +34,8 @@ void	ft_test_pos(t_map *map)
 		map->map[map->temp_y][map->temp_x - 1] == ' ' ||
 		map->map[map->temp_y][map->temp_x + 1] == ' ' ||
 		map->map[map->temp_y][map->temp_x + 1] == '\0')
-		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
+		return (1);
+	return (0);
 }
 
 int 	ft_add_sprite2(t_wolf *wolf)
