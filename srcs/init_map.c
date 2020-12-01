@@ -12,13 +12,6 @@
 
 #include "../header/wolf.h"
 
-/*
-** code error:
-** -2	: malloc fail
-** -1	: error processing .map file
-** 1	: bad format
-*/
-
 static int	ft_valid_map(t_map *map, int secret)
 {
 	map->temp_y = -1;
