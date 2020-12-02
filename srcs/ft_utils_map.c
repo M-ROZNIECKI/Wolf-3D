@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:33:51 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/05/05 10:43:11 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 12:37:31 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ int	ft_test_pos(t_map *map)
 		map->map[map->temp_y][map->temp_x - 1] == ' ' ||
 		map->map[map->temp_y][map->temp_x + 1] == ' ' ||
 		map->map[map->temp_y][map->temp_x + 1] == '\0')
+	{
+		ft_printf("pos == %d\npos2 = %d\n\n", map->temp_y, map->map_y);
 		return (1);
+	}
 	return (0);
 }
 

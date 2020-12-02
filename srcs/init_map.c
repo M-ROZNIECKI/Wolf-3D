@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:39:57 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/05/05 10:50:05 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 12:59:28 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static void	ft_fill_map(t_wolf *wolf)
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
 	ft_free(wolf->line);
-	while ((get_next_line(wolf->fd, &wolf->line)) == 1)
+	while ((ret = get_next_line(wolf->fd, &wolf->line)) == 1 || (ret == 0 && wolf->line[0] != '\0'))
 		if ((ret = ft_fill_map_bis(temp, wolf)) <= -1)
 		{
 			ft_free_sel(wolf, 0);
