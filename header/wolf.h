@@ -17,6 +17,7 @@
 # include <math.h>
 # include <mlx.h>
 # include <fcntl.h>
+
 /*
 ** don't use SPRITE_SIZE > 1
 */
@@ -31,18 +32,18 @@ typedef struct		s_lst
 	char			*content;
 	double			x;
 	double			y;
-	double 			dist;
+	double			dist;
 	struct s_lst	*next;
 }					t_lst;
 
 typedef struct		s_texture
 {
 	void			*img;
-	char 			*data;
-	char 			*path;
-	int 			x;
+	char			*data;
+	char			*path;
+	int				x;
 	int				tex_x;
-	int 			y;
+	int				y;
 	int				bpp;
 	int				sizeline;
 	int				endian;
@@ -59,7 +60,7 @@ typedef struct		s_map
 {
 	t_lst			*ch_map;
 	char			**map;
-	char 			dir;
+	char			dir;
 	unsigned int	map_y;
 	unsigned int	map_x;
 	unsigned int	check_x;
@@ -104,13 +105,13 @@ typedef struct		s_ray
 
 typedef struct		s_win
 {
-	int 			res_x_max;
+	int				res_x_max;
 	int				res_y_max;
-	int 			res_x;
+	int				res_x;
 	int				res_y;
 	void			*my_mlx;
 	void			*win;
-	char 			*name;
+	char			*name;
 }					t_win;
 
 typedef struct		s_frame
@@ -120,7 +121,7 @@ typedef struct		s_frame
 	int				draw_end;
 	int				side;
 	int				x;
-	int 			item;
+	int				item;
 	int				sprite;
 	int				secret;
 	double			wall_dist;
@@ -130,13 +131,13 @@ typedef struct		s_frame
 typedef struct		s_spr
 {
 	double			x;
-	double 			y;
+	double			y;
 	double			trs_x;
-	double 			trs_y;
+	double			trs_y;
 	double			inv;
 	int				spr_scr_x;
-	int 			spr_h;
-	int 			spr_w;
+	int				spr_h;
+	int				spr_w;
 	int				drw_start_y;
 	int				drw_start_x;
 	int				drw_end_y;
@@ -147,13 +148,13 @@ typedef struct		s_wolf
 {
 	t_win			win;
 	t_map			map;
-	t_spr 			spr_data;
+	t_spr			spr_data;
 	t_sprite		sprite;
 	t_player		player;
 	t_ray			ray;
-	t_texture 		image;
+	t_texture		image;
 	t_frame			frame;
-	t_lst 			*spr;
+	t_lst			*spr;
 	char			*line;
 	int				fd;
 	int				d;
@@ -164,35 +165,37 @@ typedef struct		s_wolf
 	unsigned short	sel;
 }					t_wolf;
 
-void	ft_error(char error, int line, const char *file, const char *function);
-void	ft_init_map(t_wolf *wolf);
-void	ft_fill_res(t_win *win, char *entry, unsigned short *ok, t_wolf *wolf);
-void	ft_texture(t_wolf *wolf);
-int		ft_test_pos(t_map *map);
-void	ft_lst_clear(t_lst **lst, void (*del)(void*));
-void	ft_lst_add_back(t_lst **a_lst, t_lst *new);
-void	ft_lst_add_frt(t_lst **alst, t_lst *new);
-t_lst	*ft_lst_new(void *content);
-int		ft_check_list(t_wolf *wolf);
-void	ft_init(t_wolf *wolf);
-void	ft_init_tex(t_wolf *wolf);
-void	ft_frame(t_wolf *wolf);
-void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf);
-void	ft_draw2(int x, int draw_start, t_wolf *wolf);
-void	ft_draw3(int x, int draw_start, t_wolf *wolf);
-void	ft_wall_detec_init(t_wolf *wolf);
-void	ft_wall_detec(t_wolf *wolf);
-int 	ft_add_sprite2(t_wolf *wolf);
-void	choose_texture(t_wolf *wolf);
-void	texture_calc(t_wolf *wolf);
-int		ft_press(int keycode, t_wolf *wolf);
-int		ft_release(int key, t_wolf *wolf);
-int		ft_move(t_wolf *wolf);
-int 	ft_leave(t_wolf *wolf);
-void	ft_bmp(t_wolf *wolf);
-void	ft_sprite(t_wolf *wolf, double *wall_dist_buf);
-void 	ft_free(void *x);
-int 	ft_free_sel(t_wolf *wolf, int code);
-int 	ft_free_tex(t_wolf *wolf, int n);
+void				ft_error(char error, int line,\
+const char *file, const char *function);
+void				ft_init_map(t_wolf *wolf);
+void				ft_fill_res(t_win *win, char *entry,\
+unsigned short *ok, t_wolf *wolf);
+void				ft_texture(t_wolf *wolf);
+int					ft_test_pos(t_map *map);
+void				ft_lst_clear(t_lst **lst, void (*del)(void*));
+void				ft_lst_add_back(t_lst **a_lst, t_lst *new);
+void				ft_lst_add_frt(t_lst **alst, t_lst *new);
+t_lst				*ft_lst_new(void *content);
+int					ft_check_list(t_wolf *wolf);
+void				ft_init(t_wolf *wolf);
+void				ft_init_tex(t_wolf *wolf);
+void				ft_frame(t_wolf *wolf);
+void				ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf);
+void				ft_draw2(int x, int draw_start, t_wolf *wolf);
+void				ft_draw3(int x, int draw_start, t_wolf *wolf);
+void				ft_wall_detec_init(t_wolf *wolf);
+void				ft_wall_detec(t_wolf *wolf);
+int					ft_add_sprite2(t_wolf *wolf);
+void				choose_texture(t_wolf *wolf);
+void				texture_calc(t_wolf *wolf);
+int					ft_press(int keycode, t_wolf *wolf);
+int					ft_release(int key, t_wolf *wolf);
+int					ft_move(t_wolf *wolf);
+int					ft_leave(t_wolf *wolf);
+void				ft_bmp(t_wolf *wolf);
+void				ft_sprite(t_wolf *wolf, double *wall_dist_buf);
+void				ft_free(void *x);
+int					ft_free_sel(t_wolf *wolf, int code);
+int					ft_free_tex(t_wolf *wolf, int n);
 
 #endif

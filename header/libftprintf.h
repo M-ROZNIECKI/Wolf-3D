@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 # include <stdarg.h>
@@ -43,37 +42,37 @@ typedef struct		s_printf
 
 # define SYMBOL		"%Xxuidpscegfno*.0-hl'# +"
 
-# define INIT_C		0b0000000000000000
+# define INIT_C		0x0000
 
-# define PERCENT	0b0000000000000001
-# define X_MAJ		0b0000000000000010
-# define X_MIN		0b0000000000000100
-# define U_MIN		0b0000000000001000
-# define I_MIN		0b0000000000010000
-# define D_MIN		0b0000000000100000
-# define P_MIN		0b0000000001000000
-# define S_MIN		0b0000000010000000
-# define C_MIN		0b0000000100000000
-# define E_MIN		0b0000001000000000
-# define G_MIN		0b0000010000000000
-# define F_MIN		0b0000100000000000
-# define N_MIN		0b0001000000000000
-# define O_MIN		0b0010000000000000
+# define PERCENT	0x0001
+# define X_MAJ		0x0002
+# define X_MIN		0x0004
+# define U_MIN		0x0008
+# define I_MIN		0x0010
+# define D_MIN		0x0020
+# define P_MIN		0x0040
+# define S_MIN		0x0080
+# define C_MIN		0x0100
+# define E_MIN		0x0200
+# define G_MIN		0x0400
+# define F_MIN		0x0800
+# define N_MIN		0x1000
+# define O_MIN		0x2000
 
-# define INIT_F		0b0000000000000000
+# define INIT_F		0x0000
 
-# define STAR		0b0000000000000001
-# define POINT		0b0000000000000010
-# define ZERO		0b0000000000000100
-# define MINUS		0b0000000000001000
-# define HH_MIN		0b0000000000010000
-# define H_MIN		0b0000000000100000
-# define LL_MIN		0b0000000001000000
-# define L_MIN		0b0000000010000000
-# define APOST		0b0000000100000000
-# define HASH		0b0000001000000000
-# define SPACE		0b0000010000000000
-# define PLUS		0b0000100000000000
+# define STAR		0x0001
+# define POINT		0x0002
+# define ZERO		0x0004
+# define MINUS		0x0008
+# define HH_MIN		0x0010
+# define H_MIN		0x0020
+# define LL_MIN		0x0040
+# define L_MIN		0x0080
+# define APOST		0x0100
+# define HASH		0x0200
+# define SPACE		0x0400
+# define PLUS		0x0800
 
 int					ft_printf (const char *format,
 					...) __attribute__((format(printf,1,2)));
