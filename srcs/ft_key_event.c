@@ -13,7 +13,8 @@
 #include "../header/wolf.h"
 #include "../header/key.h"
 
-int		ft_press(int keycode, t_wolf *wolf) {
+int		ft_press(int keycode, t_wolf *wolf)
+{
 	if (keycode == KEY_W || keycode == KEY_UP)
 		wolf->player.forward = 1;
 	else if (keycode == KEY_S || keycode == KEY_DOWN)

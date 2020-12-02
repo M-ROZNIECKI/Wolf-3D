@@ -103,7 +103,8 @@ void		ft_texture(t_wolf *wolf)
 		ft_texture2(wolf);
 }
 
-void		ft_fill_res(t_win *win, char *entry, unsigned short *ok, t_wolf *wolf)
+void		ft_fill_res(t_win *win, char *entry, unsigned short *ok,\
+t_wolf *wolf)
 {
 	int i;
 

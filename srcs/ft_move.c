@@ -9,13 +9,10 @@
 /*   Updated: 2020/11/20 14:57:09 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-//
-// Created by fenrir on 01/09/2020 01:19:32.
-//
 
 #include "../header/wolf.h"
 
-void	ft_right(t_player *player)
+void		ft_right(t_player *player)
 {
 	if (player->turn_right == 1)
 	{
@@ -32,7 +29,7 @@ void	ft_right(t_player *player)
 	}
 }
 
-void	ft_left(t_player *player)
+void		ft_left(t_player *player)
 {
 	if (player->turn_left == 1)
 	{
@@ -50,7 +47,7 @@ void	ft_left(t_player *player)
 	ft_right(player);
 }
 
-void	ft_move_back(t_wolf *info)
+void		ft_move_back(t_wolf *info)
 {
 	if (info->map.map[(int)(info->player.y_pos)][(int)(info->player.x_pos -
 	info->player.x_dir * (info->player.move_speed + 0.2))] != '1')
@@ -75,7 +72,7 @@ int			ft_move(t_wolf *wolf)
 		ft_move_back(wolf);
 	ft_left(&wolf->player);
 	if ((wolf->player.forward || wolf->player.backward ||
-		 wolf->player.turn_right || wolf->player.turn_left) == 1)
+		wolf->player.turn_right || wolf->player.turn_left) == 1)
 	{
 		mlx_destroy_image(wolf->win.my_mlx, wolf->image.img);
 		ft_frame(wolf);
@@ -83,13 +80,13 @@ int			ft_move(t_wolf *wolf)
 	return (0);
 }
 
-int 		ft_leave(t_wolf *wolf)
+int			ft_leave(t_wolf *wolf)
 {
 	int i;
 
 	i = -1;
 	mlx_destroy_image(wolf->win.my_mlx, wolf->image.img);
-	while(wolf->map.map[++i])
+	while (wolf->map.map[++i])
 		free(wolf->map.map[i]);
 	i = 5;
 	if (wolf->frame.secret == 1)

@@ -73,23 +73,23 @@ static int	ft_add_sprite(t_wolf *wolf)
 	if (wolf->frame.sprite == 0)
 	{
 		if (ft_add_sprite2(wolf) == 0)
-			return 0;
+			return (0);
 	}
 	else
 		if (ft_check_list(wolf) == 1)
 		{
 			if (!(new = (t_lst *)malloc(sizeof(t_lst))))
-				return 0;
+				return (0);
 			new->x = wolf->map.map_x + 0.5;
 			new->y = wolf->map.map_y + 0.5;
 			new->dist = pow(wolf->player.x_pos - new->x, 2) +\
 			pow(wolf->player.y_pos - new->y, 2);
 			ft_lst_add_frt(&wolf->spr, new);
 		}
-	return 1;
+	return (1);
 }
 
-void	ft_wall_detec(t_wolf *wolf)
+void		ft_wall_detec(t_wolf *wolf)
 {
 	wolf->map.hit = 0;
 	while (wolf->map.hit == 0)

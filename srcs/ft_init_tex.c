@@ -32,8 +32,8 @@ void	ft_init_tex(t_wolf *wolf)
 			if (ft_free_tex(wolf, n))
 				ft_error(2, __LINE__, __FILE__, __FUNCTION__);
 		wolf->sprite.wall[n].data = mlx_get_data_addr(wolf->sprite.wall[n].img,\
-			&wolf->sprite.wall[n].bpp, &wolf->sprite.wall[n].sizeline, \
-			&wolf->sprite.wall[n].endian);
+		&wolf->sprite.wall[n].bpp, &wolf->sprite.wall[n].sizeline, \
+		&wolf->sprite.wall[n].endian);
 		ft_free(wolf->sprite.wall[n].path);
 	}
 }

@@ -81,7 +81,7 @@ int		ft_check_list(t_wolf *wolf)
 	t_lst *temp;
 
 	temp = wolf->spr;
-	while(temp)
+	while (temp)
 	{
 		if (wolf->map.map_x + 0.5 == temp->x &&\
 		wolf->map.map_y + 0.5 == temp->y)

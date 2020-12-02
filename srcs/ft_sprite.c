@@ -45,7 +45,7 @@ void	ft_spr_drw(t_wolf *wolf, const double *wall_dist_buf, int stripe)
 	y = wolf->spr_data.drw_start_y - 1;
 	if (wolf->spr_data.trs_y < wall_dist_buf[stripe] && stripe < \
 	wolf->win.res_x && stripe > 0 && wolf->spr_data.trs_y > 0)
-		while(++y < wolf->spr_data.drw_end_y)
+		while (++y < wolf->spr_data.drw_end_y)
 		{
 			wolf->d = (y - wolf->mov_dwn) * 256 - wolf->win.res_y * 128 +\
 			wolf->spr_data.spr_h * 128;
@@ -55,11 +55,11 @@ void	ft_spr_drw(t_wolf *wolf, const double *wall_dist_buf, int stripe)
 			if (wolf->tex_y >= 0)
 				if (\
 	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
-    * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 2] != 0) ||\
-    ((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
-    * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 1] != 0) ||\
-    ((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
-    * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y] != 0))
+	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 2] != 0) ||\
+	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
+	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 1] != 0) ||\
+	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
+	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y] != 0))
 					ft_draw3(stripe, y, wolf);
 		}
 }
@@ -108,12 +108,12 @@ void	ft_spr_calc(t_wolf *wolf, t_lst *spr, double *wall_dist_buf)
 	wolf->spr_data.spr_h = abs((int)(wolf->win.res_y /\
 	wolf->spr_data.trs_y)) * SPRITE_SIZE;
 	wolf->spr_data.drw_start_y = (wolf->win.res_y - wolf->spr_data.spr_h) / 2\
-	 + wolf->mov_dwn;
+	+ wolf->mov_dwn;
 	if (wolf->spr_data.drw_start_y < 0)
 		wolf->spr_data.drw_start_y = 0;
-    wolf->spr_data.drw_end_y = (wolf->win.res_y + wolf->spr_data.spr_h) / 2\
-    + wolf->mov_dwn;
-    ft_spr_calc_2(wolf, wall_dist_buf);
+	wolf->spr_data.drw_end_y = (wolf->win.res_y + wolf->spr_data.spr_h) / 2\
+	+ wolf->mov_dwn;
+	ft_spr_calc_2(wolf, wall_dist_buf);
 }
 
 void	ft_sprite(t_wolf *wolf, double *wall_dist_buf)
@@ -123,7 +123,7 @@ void	ft_sprite(t_wolf *wolf, double *wall_dist_buf)
 	wolf->sel = 4;
 	ft_sort_lst(wolf);
 	spr = wolf->spr;
-	while(spr)
+	while (spr)
 	{
 		ft_spr_calc(wolf, spr, wall_dist_buf);
 		spr = spr->next;

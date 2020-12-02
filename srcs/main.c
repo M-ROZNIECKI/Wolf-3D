@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../header/wolf.h"
 
 /*
@@ -19,10 +18,11 @@
 ** -1	: error processing .map file
 ** 0	: an element in .cub file was set more than one times
 ** 1	: bad format
-** 2	: you need to give in param the path to the .cub file containing the data needed to make the map
+** 2	: you need to give in param the path to the .cub file
+** 		  containing the data needed to make the map
 */
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
 	t_wolf		*wolf;
 

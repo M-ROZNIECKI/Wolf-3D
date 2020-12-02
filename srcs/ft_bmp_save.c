@@ -74,7 +74,7 @@ static void	ft_fill_header(int fd, t_wolf *wolf)
 void		ft_bmp(t_wolf *wolf)
 {
 	int fd;
-	int		sizeline;
+	int	sizeline;
 
 	fd = open("save.bmp", O_CREAT | O_WRONLY, 0777);
 	ft_fill_header(fd, wolf);

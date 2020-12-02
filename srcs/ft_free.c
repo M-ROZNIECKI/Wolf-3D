@@ -4,13 +4,13 @@
 
 #include "../header/wolf.h"
 
-void 		ft_free(void *x)
+void		ft_free(void *x)
 {
 	free(x);
 	x = NULL;
 }
 
-static void ft_fre_sel_bis(t_wolf *wolf, int i)
+static void	ft_fre_sel_bis(t_wolf *wolf, int i)
 {
 	if (wolf->map.map)
 	{
@@ -35,7 +35,7 @@ static void	ft_free_spec(t_wolf *wolf, int i, int code)
 	free(wolf->win.my_mlx);
 }
 
-int 		ft_free_sel(t_wolf *wolf, int code)
+int			ft_free_sel(t_wolf *wolf, int code)
 {
 	int i;
 
@@ -54,7 +54,7 @@ int 		ft_free_sel(t_wolf *wolf, int code)
 	return (1);
 }
 
-int 		ft_free_tex(t_wolf *wolf, int n)
+int			ft_free_tex(t_wolf *wolf, int n)
 {
 	int i;
 

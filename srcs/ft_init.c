@@ -23,7 +23,7 @@ void	ft_init_w(t_win *win)
 	win->win = mlx_new_window(win->my_mlx, win->res_x, win->res_y, win->name);
 }
 
-void 	ft_init_player(t_wolf *wolf)
+void	ft_init_player(t_wolf *wolf)
 {
 	if (wolf->map.dir == 'N')
 	{

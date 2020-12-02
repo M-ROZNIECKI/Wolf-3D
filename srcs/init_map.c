@@ -16,9 +16,9 @@ static int	ft_valid_map(t_map *map, int secret)
 {
 	map->temp_y = -1;
 	map->temp_x = -1;
-	while(++map->temp_y < map->map_y)
+	while (++map->temp_y < map->map_y)
 	{
-		while(++map->temp_x < map->map_x)
+		while (++map->temp_x < map->map_x)
 			if (map->map[map->temp_y][map->temp_x] == '0' ||
 			map->map[map->temp_y][map->temp_x] == '2' ||
 			map->map[map->temp_y][map->temp_x] == '3' ||
@@ -40,12 +40,12 @@ static int	ft_valid_map(t_map *map, int secret)
 static int	ft_fill_tab(t_map *map, int secret)
 {
 	unsigned int	i;
-	t_lst		*temp;
+	t_lst			*temp;
 
 	i = 0;
 	temp = map->ch_map;
 	if (!(map->map = ft_calloc(sizeof(char *), (map->map_y + 1))))
-		return(-2);
+		return (-2);
 	while (temp)
 	{
 		if (!(map->map[i] = ft_calloc(sizeof(char), (map->map_x + 1))))
@@ -87,13 +87,14 @@ static int	ft_fill_map_bis(unsigned int temp, t_wolf *wolf)
 static void	ft_fill_map(t_wolf *wolf)
 {
 	unsigned int	temp;
-	int 			ret;
+	int				ret;
 
 	wolf->map.ch_map = ft_lst_new(ft_strdup(wolf->line));
 	wolf->map.map_y = 1;
 	wolf->map.map_x = ft_strlen(wolf->line);
 	ft_free(wolf->line);
-	while ((ret = get_next_line(wolf->fd, &wolf->line)) == 1 || (ret == 0 && wolf->line[0] != '\0'))
+	while ((ret = get_next_line(wolf->fd, &wolf->line)) == 1\
+	|| (ret == 0 && wolf->line[0] != '\0'))
 		if ((ret = ft_fill_map_bis(temp, wolf)) <= -1)
 		{
 			ft_free_sel(wolf, 0);

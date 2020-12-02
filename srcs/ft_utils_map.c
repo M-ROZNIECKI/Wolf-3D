@@ -15,6 +15,7 @@
 int	ft_test_pos(t_map *map)
 {
 	static unsigned int i = 0;
+
 	if ((map->map[map->temp_y][map->temp_x] < '0') ||
 	(map->map[map->temp_y][map->temp_x] > '3'))
 	{
@@ -34,22 +35,19 @@ int	ft_test_pos(t_map *map)
 		map->map[map->temp_y][map->temp_x - 1] == ' ' ||
 		map->map[map->temp_y][map->temp_x + 1] == ' ' ||
 		map->map[map->temp_y][map->temp_x + 1] == '\0')
-	{
-		ft_printf("pos == %d\npos2 = %d\n\n", map->temp_y, map->map_y);
 		return (1);
-	}
 	return (0);
 }
 
-int 	ft_add_sprite2(t_wolf *wolf)
+int	ft_add_sprite2(t_wolf *wolf)
 {
 	if (!(wolf->spr = (t_lst *)malloc(sizeof(t_lst))))
-		return 0;
+		return (0);
 	wolf->spr->x = wolf->map.map_x + 0.5;
 	wolf->spr->y = wolf->map.map_y + 0.5;
 	wolf->spr->dist = pow(wolf->player.x_pos - wolf->spr->x, 2) +\
 			pow(wolf->player.y_pos - wolf->spr->y, 2);
 	wolf->spr->next = NULL;
 	wolf->frame.sprite = 2;
-	return 1;
+	return (1);
 }

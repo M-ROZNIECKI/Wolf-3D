@@ -12,13 +12,11 @@
 
 #include "../header/wolf.h"
 
-
-void	ft_draw3(int x, int draw_start, t_wolf *wolf)
+void		ft_draw3(int x, int draw_start, t_wolf *wolf)
 {
 	int		tex_y;
 
 	tex_y = wolf->tex_y;
-
 	wolf->image.data[x * 4 + 4 * wolf->win.res_x * draw_start] =\
 	(char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
 	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * tex_y];
@@ -31,7 +29,7 @@ void	ft_draw3(int x, int draw_start, t_wolf *wolf)
 	wolf->image.data[x * 4 + 4 * wolf->win.res_x * draw_start + 3] = 0;
 }
 
-void	ft_draw2(int x, int draw_start, t_wolf *wolf)
+void		ft_draw2(int x, int draw_start, t_wolf *wolf)
 {
 	wolf->d = draw_start * 256 - wolf->win.res_y * 128 +\
 	wolf->frame.line_height * 128;
@@ -40,15 +38,15 @@ void	ft_draw2(int x, int draw_start, t_wolf *wolf)
 	(long int)(wolf->frame.line_height)) / (long int)(256));
 	if (\
 	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
-    * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 2] != 0) ||\
-    ((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
-    * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 1] != 0) ||\
-    ((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
-    * 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y] != 0))
+	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 2] != 0) ||\
+	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
+	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y + 1] != 0) ||\
+	((char)wolf->sprite.wall[wolf->sel].data[wolf->sprite.wall[wolf->sel].tex_x\
+	* 4 + 4 * wolf->sprite.wall[wolf->sel].x * wolf->tex_y] != 0))
 		ft_draw3(x, draw_start, wolf);
 }
 
-static void ft_drw_c_f(int x, int y, t_wolf *wolf)
+static void	ft_drw_c_f(int x, int y, t_wolf *wolf)
 {
 	while (++y <= wolf->win.res_y / 2)
 	{
@@ -71,7 +69,7 @@ static void ft_drw_c_f(int x, int y, t_wolf *wolf)
 	}
 }
 
-void	ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf)
+void		ft_draw(int x, int draw_start, int draw_end, t_wolf *wolf)
 {
 	int		y;
 
