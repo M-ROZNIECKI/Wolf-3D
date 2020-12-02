@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:35:21 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/02/27 17:35:21 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 14:29:17 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ t_wolf *wolf)
 	win->res_y = ft_atoi(&entry[i]);
 	if (win->res_y < 0 || win->res_x < 0)
 	{
-		ft_free(entry);
 		ft_free_sel(wolf, 0);
 		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	}

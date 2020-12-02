@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:39:57 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/02 12:59:28 by fenrir           ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 15:17:26 by fenrir           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int	ft_fill_map_bis(unsigned int temp, t_wolf *wolf)
 	else
 	{
 		ft_free(wolf->line);
-		return (ft_fill_tab(&wolf->map, wolf->frame.secret));
+		return (0);
 	}
 	ft_free(wolf->line);
 	return (0);
@@ -88,6 +88,7 @@ static void	ft_fill_map(t_wolf *wolf)
 {
 	unsigned int	temp;
 	int				ret;
+	int				ret_er;
 
 	wolf->map.ch_map = ft_lst_new(ft_strdup(wolf->line));
 	wolf->map.map_y = 1;
@@ -95,10 +96,10 @@ static void	ft_fill_map(t_wolf *wolf)
 	ft_free(wolf->line);
 	while ((ret = get_next_line(wolf->fd, &wolf->line)) == 1\
 	|| (ret == 0 && wolf->line[0] != '\0'))
-		if ((ret = ft_fill_map_bis(temp, wolf)) <= -1)
+		if ((ret_er = ft_fill_map_bis(temp, wolf)) <= -1)
 		{
 			ft_free_sel(wolf, 0);
-			ft_error((char)ret, __LINE__, __FILE__, __FUNCTION__);
+			ft_error((char)ret_er, __LINE__, __FILE__, __FUNCTION__);
 		}
 	wolf->ok += 0x0100;
 	if ((ret = ft_fill_tab(&wolf->map, wolf->frame.secret)) <= -1)
