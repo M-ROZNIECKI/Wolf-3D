@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 22:23:22 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 22:23:55 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	main(int argc, char const *argv[])
 	if (!(wolf = malloc(sizeof(t_wolf))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	wolf->win.name = ft_strdup(argv[1]);
-	if (0 != (ft_strncmp(&wolf->win.name[ft_strlen(wolf->win.name) - 4], ".cub", 4)))
+	if (0 != (ft_strncmp(&wolf->win.name[ft_strlen(wolf->win.name) - 4],\
+	".cub", 4)))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	wolf->fd = open(wolf->win.name, O_RDONLY);
 	wolf->ok = 0;
