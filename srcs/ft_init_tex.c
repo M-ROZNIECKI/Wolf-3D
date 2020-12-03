@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 21:37:45 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 21:38:20 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	ft_init_tex(t_wolf *wolf)
 		if (0 == ft_strncmp(&wolf->sprite.wall[n].path[ft_strlen(\
 			wolf->sprite.wall[n].path) - 3], "xpm", 3))
 		{
-			if ((wolf->sprite.wall[n].img = mlx_xpm_file_to_image(wolf->win.my_mlx, \
-			wolf->sprite.wall[n].path, &wolf->sprite.wall[n].x, \
-			&wolf->sprite.wall[n].y)) == (void *)0)
+			if ((wolf->sprite.wall[n].img =\
+			mlx_xpm_file_to_image(wolf->win.my_mlx, wolf->sprite.wall[n].path,\
+			&wolf->sprite.wall[n].x, &wolf->sprite.wall[n].y)) == (void *)0)
 				ft_error(2, __LINE__, __FILE__, __FUNCTION__);
 		}
 		else if (ft_free_tex(wolf, n))
