@@ -5,21 +5,16 @@
 #                                                    +:+ +:+         +:+     #
 #   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
-#   Created: 2020/02/27 17:45:12 by mrozniec          #+#    #+#             #
-#   Updated: 2020/12/02 11:41:15 by fenrir           ###   ########lyon.fr   #
+#   Created: 2020/12/03 16:22:17 by mrozniec          #+#    #+#             #
+#   Updated: 2020/12/03 16:22:17 by mrozniec         ###   ########lyon.fr   #
 #                                                                            #
 # ************************************************************************** #
 
 NAME = Wolf-3D
 
-ifeq ($(shell uname), Linux)
-TARGET = ft_printf/linux/libftprintf.a -I minilibx -L minilibx -lmlx -lXext\
+TARGET = ft_printf/libftprintf.a -I minilibx -L./minilibx-linux -lmlx -lXext\
 		-lX11 -lm
 FLAGS = -Wall -Wextra -g -O3
-else
-TARGET = ft_printf/mac/libftprintf.a -I minilibx -L minilibx -lmlx
-FLAGS = -Wall -Wextra
-endif
 
 SRC =	srcs/ft_error.c\
 		srcs/ft_init.c\
@@ -45,6 +40,8 @@ OBJ =	$(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
+	@make -C minilibx-linux re
+	@make -C ft_printf re
 	@cc $(FLAGS) -O3 -o$(NAME) $(OBJ) $(TARGET)
 
 %.o: %.c
