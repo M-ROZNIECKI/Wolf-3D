@@ -6,7 +6,7 @@
 #   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             #
-#   Updated: 2020/12/03 18:02:38 by mrozniec         ###   ########lyon.fr   #
+#   Updated: 2020/12/03 22:43:54 by mrozniec         ###   ########lyon.fr   #
 #                                                                            #
 # ************************************************************************** #
 
@@ -75,7 +75,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HEADER)
 	@ar rc $(NAME) $(OBJ)
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	@cc -o $@ -c $< -Wall -Wextra -Werror
 
 .PHONY: clean fclean re all

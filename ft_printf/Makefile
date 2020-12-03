@@ -170,7 +170,7 @@ $(NAME): $(OBJ) $(HEADER)
 	@mv $(OBJ_FTMP) temp_file/
 	@ar rc $(NAME) $(OBJ) $(OBJ_FT)
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	@cc -o $@ -c $< -Wall -Wextra -Werror
 
 .PHONY: clean fclean re all

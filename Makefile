@@ -6,7 +6,7 @@
 #   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             #
-#   Updated: 2020/12/03 22:43:54 by mrozniec         ###   ########lyon.fr   #
+#   Updated: 2020/12/03 23:15:04 by mrozniec         ###   ########lyon.fr   #
 #                                                                            #
 # ************************************************************************** #
 
@@ -44,11 +44,11 @@ OBJ =	$(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@make -C minilibx-linux re
-	@make -C ft_printf re
+	@make -C minilibx-linux
+	@make -C ft_printf
 	@cc $(FLAGS) -O3 -o$(NAME) $(OBJ) $(TARGET)
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	@cc -o $@ -c $< $(FLAGS)
 
 .PHONY: clean fclean re all
