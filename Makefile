@@ -6,7 +6,7 @@
 #   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             #
-#   Updated: 2020/12/03 18:02:37 by mrozniec         ###   ########lyon.fr   #
+#   Updated: 2020/12/03 18:02:38 by mrozniec         ###   ########lyon.fr   #
 #                                                                            #
 # ************************************************************************** #
 
@@ -33,7 +33,11 @@ SRC =	srcs/ft_error.c\
 		srcs/ft_free.c\
 		srcs/main.c
 
-HEADER =	header/$(wildcard *.h)
+HEADER =	header/key.h\
+			header/libft.h\
+			header/libftprintf.h\
+			header/mlx.h\
+			header/wolf.h\
 
 OBJ =	$(SRC:.c=.o)
 
