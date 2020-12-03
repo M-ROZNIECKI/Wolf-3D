@@ -1,14 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lflags.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 16:22:17 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 16:22:17 by mrozniec         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_lflags.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/12/11 13:55:02 by fenrir       #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/07 09:39:07 by mrozniec    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libflag.h"
@@ -47,12 +47,16 @@ static char	*ft_long_char(t_printf *wip)
 		i = 0;
 		if ((str = va_arg(wip->ap, wchar_t *)) == NULL)
 			return (ft_strdup("(null)"));
-		res = ft_char_conv(str[i++]);
+		res = ft_char_conv(str[i++], wip);
 		while (str[i])
-			res = ft_strjoinmod(res, ft_char_conv(str[i++]), 3);
+			res = ft_strjoinmod(res, ft_char_conv(str[i++], wip), 3);
 	}
 	else
-		res = ft_char_conv(va_arg(wip->ap, wchar_t));
+		res = ft_char_conv(va_arg(wip->ap, wchar_t), wip);
+	if (wip->error == 2)
+		wip->error = 1;
+	else
+		wip->error = 0;
 	return (res);
 }
 

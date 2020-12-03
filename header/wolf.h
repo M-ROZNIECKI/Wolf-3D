@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 16:22:17 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 16:22:17 by mrozniec         ###   ########lyon.fr   */
+/*   Created: 2020/12/03 17:21:57 by mrozniec          #+#    #+#             */
+/*   Updated: 2020/12/03 17:21:57 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "libftprintf.h"
 # include <stdio.h>
 # include <math.h>
-# include <mlx.h>
+# include "mlx.h"
 # include <fcntl.h>
 
 /*

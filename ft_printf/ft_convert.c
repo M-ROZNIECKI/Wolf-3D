@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_convert.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 16:22:17 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 16:22:17 by mrozniec         ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_convert.c                                     .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/11/27 13:56:54 by mrozniec     #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/07 09:57:28 by mrozniec    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "convertion/libconv.h"
@@ -24,7 +25,12 @@ static char	*ch_conv2(t_printf *wip)
 		res = ft_omin_conv(wip);
 	else
 	{
+		wip->flags = wip->flags & ~SPACE;
+		wip->flags = wip->flags & ~PLUS;
+		wip->flags = wip->flags & ~POINT;
 		res = ft_strdup("\0");
+		if (wip->size_champ > 1)
+			res = ft_size_champ(res, wip, 1);
 		wip->flags = INIT_F;
 	}
 	return (res);

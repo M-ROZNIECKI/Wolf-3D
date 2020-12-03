@@ -1,14 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 16:22:17 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 16:22:17 by mrozniec         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_parse.c                                       .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mrozniec <mrozniec@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/11/27 09:15:42 by mrozniec     #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/07 09:42:00 by mrozniec    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
@@ -118,12 +118,13 @@ int			ft_parse(t_printf *wip, int *i, int n)
 	long long	len;
 
 	ft_init(wip, i);
-	ft_localetest(wip, i, n);
+	temp_form = ft_localetest(wip, i, n);
 	if (wip->error == 1)
 		return (n);
 	len = ft_strlen(&wip->formats[n]);
 	wip->strdone = ft_join_ns(wip->strdone, &wip->formats[n], &len, 1);
-	temp_form = ch_conv1(wip);
+	if (temp_form == NULL)
+		temp_form = ch_conv1(wip);
 	len = 1;
 	if ((wip->flags & SPACE) && (wip->neg == '0'))
 		wip->strdone = ft_join_ns(wip->strdone, " ", &len, 1);

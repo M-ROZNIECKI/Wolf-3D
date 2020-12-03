@@ -5,8 +5,8 @@
 #                                                    +:+ +:+         +:+     #
 #   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
-#   Created: 2020/12/03 16:22:17 by mrozniec          #+#    #+#             #
-#   Updated: 2020/12/03 16:22:17 by mrozniec         ###   ########lyon.fr   #
+#   Created: 2020/12/03 17:21:57 by mrozniec          #+#    #+#             #
+#   Updated: 2020/12/03 17:21:57 by mrozniec         ###   ########lyon.fr   #
 #                                                                            #
 # ************************************************************************** #
 
@@ -54,5 +54,8 @@ clean:
 
 fclean: clean
 	@/bin/rm -rf $(NAME)
+	@make -C ft_printf fclean
+	@make -C minilibx-linux clean
+	@/bin/rm -rf minilibx-linux/Makefile.gen
 
 re: fclean all
