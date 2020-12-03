@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 22:23:55 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 22:38:07 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(int argc, char const *argv[])
 {
 	t_wolf		*wolf;
 
+	if (argc < 2 || (argc == 3 && ft_strncmp(argv[2], "--save", 6) != 0))
+		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	if (!(wolf = malloc(sizeof(t_wolf))))
 		ft_error(-2, __LINE__, __FILE__, __FUNCTION__);
 	wolf->win.name = ft_strdup(argv[1]);
