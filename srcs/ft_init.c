@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 18:02:37 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 21:55:34 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ void	ft_init_player(t_wolf *wolf)
 void	ft_init(t_wolf *wolf)
 {
 	wolf->frame.secret = 0;
+	wolf->map.start_x = 0;
+	wolf->map.start_y = 0;
 	ft_init_map(wolf);
-	if (wolf->ret == -1)
+	if (wolf->ret == -1 || wolf->map.start_x == 0 || wolf->map.start_y == 0)
 		if (ft_free_sel(wolf, 0))
 			ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	ft_init_w(&wolf->win);

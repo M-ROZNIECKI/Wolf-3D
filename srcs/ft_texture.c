@@ -6,7 +6,7 @@
 /*   By: mrozniec <mrozniec@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 18:02:37 by mrozniec          #+#    #+#             */
-/*   Updated: 2020/12/03 18:02:37 by mrozniec         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 21:09:46 by mrozniec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,13 @@ t_wolf *wolf)
 	*ok += 0x080;
 	while ((entry[i] >= 9 && entry[i] <= 13) || entry[i] == 32)
 		i++;
+	if (entry[i] < 48 || entry[i] > 57)
+		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	win->res_x = ft_atoi(&entry[i]);
-	while (((entry[i] >= 13 && entry[i] != 32) || entry[i] <= 9) && entry[i])
+	while (((entry[i] >= 13 && entry[i] <= 32) || entry[i] <= 9) && entry[i])
 		i++;
+	if (entry[i] < 48 || entry[i] > 57)
+		ft_error(1, __LINE__, __FILE__, __FUNCTION__);
 	win->res_y = ft_atoi(&entry[i]);
 	if (win->res_y < 0 || win->res_x < 0)
 	{
